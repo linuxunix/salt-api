@@ -13,12 +13,14 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import include, url
 from django.contrib import admin
 from django.views.generic import TemplateView
-from saltstack import views
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    # url(r'^$',TemplateView.as_view(template_name="index.html"))
-    url(r'^$',views.index),
+    url(r'^saltstack/', include('saltstack.urls')),
+    url(r'^$',TemplateView.as_view(template_name="index.html"))
+
+
 ]

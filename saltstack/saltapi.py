@@ -26,18 +26,7 @@ class SaltAPI(object):
         token_id=token['return'][0]['token']
         return token_id
 
-    def list_all_key(self):
-        form = {'client': 'whell', 'fun': 'key.list_all'}
-        form_data = urllib.urlencode(form)
-        headers = {'X-Auth-Token': SaltAPI().salt_login_token()}
-        request = urllib2.Request(
-            url=self._url,
-             headers=headers,
-            data=form_data
-        )
-        response = urllib2.urlopen(request)
-        return  json.load(response)
-    def salt_remote_noarg_execution(self, tgt, fun):
+    def salt_remote_execution(self, tgt, fun):
         form = {'client': 'local', 'tgt': tgt, 'fun': fun}
         form_data = urllib.urlencode(form)
         headers = {'X-Auth-Token': SaltAPI().salt_login_token()}
@@ -49,20 +38,5 @@ class SaltAPI(object):
         response = urllib2.urlopen(request)
         return  json.load(response)
 
-    def salt_remote_execution(self, tgt, fun,arg):
-        form = {'client': 'local', 'tgt': tgt, 'fun': fun,'arg':arg}
-        form_data = urllib.urlencode(form)
-        headers = {'X-Auth-Token': SaltAPI().salt_login_token()}
-        request = urllib2.Request(
-            url=self._url,
-             headers=headers,
-            data=form_data
-        )
-        response = urllib2.urlopen(request)
-        return  json.load(response)
-
-
-#测试
-print SaltAPI().salt_remote_noarg_execution(tgt='*',fun='disk.usage')
-#print  SaltAPI().salt_remote_execution(tgt='*',fun='cmd.run',arg='free -m')
+print SaltAPI().salt_remote_execution(tgt='*',fun='test.ping')
 
