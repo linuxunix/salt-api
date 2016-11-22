@@ -18,12 +18,12 @@
               <hr>
               		<form action="/saltstack/key_delete/" method="get" role="form">
                        <div class="form-group">
-                             <label style="color: green">已经认证：</label><span class="badge"> {{ minions_list|length }}</span></span></h4>
+                             <label style="color: green">已经认证：</label><span class="badge"> {{ Accepted_Keys|length }}</span></span></h4>
                                    <select class="form-control" multiple="" name="match" style="background-color: black;color: green">
-                                            {% for i in minions_list %}
+                                            {% for i in Accepted_Keys %}
                                                 <option>{{ i }}</option>
                                             {% empty %}
-                                                <option>null</option>
+                                                <option>还没有认证的主机</option>
                                             {% endfor %}
                                     </select>
                                     <button class="btn btn-primary btn-xs" type="submit">删除</button>
@@ -33,16 +33,17 @@
 
                     <form action="/saltstack/key_accept/" method="get" role="form">
                         <div class="form-group">
-                            <label style="color: red">等待认证：</label><span class="badge">33</span></span></h4>
+                            <label style="color: red">等待认证：</label><span class="badge">{{ Unaccepted_Keys|length }}</span></span></h4>
                             <select class="form-control" multiple="" name="match" style="background-color: black;color: red">
-                            {% for i in minions.minions_pre %}
+                            {% for i in Unaccepted_Keys %}
                                 <option>{{ i }}</option>
                             {% empty %}
-                                <option>null</option>
+                                <option>全部已认证</option>
                             {% endfor %}
                             </select>
-                        </div>
+
                         <button class="btn btn-primary btn-xs" type="submit">接受</button>
+                        </div>
                     </form>
 
           </div>
