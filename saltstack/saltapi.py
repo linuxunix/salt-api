@@ -10,18 +10,33 @@ django.setup()
 
 class SaltAPI(object):
     _token_id = ''
-    def __init__(self,_url,_user,_pass):
-        self._url = _url
-        self._user = _user
-        self._pass = _pass
+    def __init__(self):
+        self._login_url = settings.SALT_API_URL_LOGIN
+        self._url = settings.MASTER_API_URL
+        self._user = settings.SALT_API_AUTH_USER
+        self._pass = settings.SALT_API_AUTH_PASS
 
     # 登录salt-api,获取token
     def salt_login_token(self):
         form = {'eauth': 'pam', 'username': self._user, 'password': self._pass}
         form_data = urllib.urlencode(form)
-        request = urllib2.Request(self._url, form_data)
+        request = urllib2.Request(self._login_url, form_data)
         response = urllib2.urlopen(request)
         token=json.load(response)
         token_id=token['return'][0]['token']
         return token_id
-print SaltAPI(settings.SALT_API_URL_LOGIN,settings.SALT_API_AUTH_USER,settings.SALT_API_AUTH_PASS).salt_login_token()
+
+    def salt_remote_execution(self, tgt, fun):
+        form = {'client': 'local', 'tgt': tgt, 'fun': fun}
+        form_data = urllib.urlencode(form)
+        headers = {'X-Auth-Token': SaltAPI().salt_login_token()}
+        request = urllib2.Request(
+            url=self._url,
+             headers=headers,
+            data=form_data
+        )
+        response = urllib2.urlopen(request)
+        return  json.load(response)
+
+print SaltAPI().salt_remote_execution(tgt='*',fun='test.ping')
+
