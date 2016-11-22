@@ -26,6 +26,19 @@ class SaltAPI(object):
         token_id=token['return'][0]['token']
         return token_id
 
+    def list_all_key(self):
+        form = {'client': 'wheel', 'fun': 'key.list_all'}
+        form_data = urllib.urlencode(form)
+        headers = {'X-Auth-Token': SaltAPI().salt_login_token()}
+        request = urllib2.Request(
+            url=self._url,
+             headers=headers,
+            data=form_data
+        )
+        response = urllib2.urlopen(request)
+        return json.load(response)['return'][0]['data']['return']['minions']
+
+
     def salt_remote_execution(self, tgt, fun):
         form = {'client': 'local', 'tgt': tgt, 'fun': fun}
         form_data = urllib.urlencode(form)
@@ -36,7 +49,9 @@ class SaltAPI(object):
             data=form_data
         )
         response = urllib2.urlopen(request)
-        return  json.load(response)
+        return json.load(response)
 
-print SaltAPI().salt_remote_execution(tgt='*',fun='test.ping')
 
+
+# print SaltAPI().salt_remote_execution(tgt='*',fun='test.ping')
+# print SaltAPI().list_all_key()

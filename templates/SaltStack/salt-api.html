@@ -15,13 +15,37 @@
     <div class="row">
           <div class="col-md-3">
                <h3>认证管理</h3>
-          <h3>认证管理dddddddddddddddddddddddddddssssssssssssssssssssssssssssssssssssssssssssddddddddddddddddddddd</h3>
+              <hr>
+              		<form action="/saltstack/key_delete/" method="get" role="form">
+                       <div class="form-group">
+                             <label style="color: green">已经认证：</label><span class="badge"> {{  len(minions) }}</span></span></h4>
+                                   <select class="form-control" multiple="" name="match" style="background-color: black;color: green">
+                                            {% for i in minions %}
+                                                <option>{{ i }}</option>
+                                            {% empty %}
+                                                <option>null</option>
+                                            {% endfor %}
+                                    </select>
+                                    <button class="btn btn-primary btn-xs" type="submit">删除</button>
+
+                       </div>
+                     </form>
+
+                    <form action="/saltstack/key_accept/" method="get" role="form">
+                        <div class="form-group">
+                            <label style="color: red">等待认证：</label><span class="badge">33</span></span></h4>
+                            <select class="form-control" multiple="" name="match" style="background-color: black;color: red">
+                            {% for i in minions.minions_pre %}
+                                <option>{{ i }}</option>
+                            {% empty %}
+                                <option>null</option>
+                            {% endfor %}
+                            </select>
+                        </div>
+                        <button class="btn btn-primary btn-xs" type="submit">接受</button>
+                    </form>
 
           </div>
-          <div class="col-md-3">
-               <h3>认证管理</h3>
-          <h3>认证管理dddddddddddddddddddddddddddssssssssssssssssssssssssssssssssssssssssssssddddddddddddddddddddd</h3>
-
           </div>
     </div>
 </div>
