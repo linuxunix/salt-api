@@ -22,23 +22,24 @@
 
 <div class="container-fluid">
     <div class="row">
-          <div class="col-md-3">
+          <div class="alert alert-info" role="alert" align="center" id="success_info" style="display:none"></div>
+         <div class="col-md-3">
                <h3>认证管理</h3>
-              <hr>
-              		<form action="/saltstack/key_delete/" method="get" role="form">
+                    <hr>
+
                        <div class="form-group">
                              <label style="color: green">已经认证：</label><span class="badge"> {{ Accepted_Keys|length }}</span></span></h4>
-                                   <select class="form-control" multiple="" name="match" style="background-color: black;color: green">
+                                   <select id="Accepted_Key" class="form-control" multiple="" name="match" style="background-color: black;color: green">
                                             {% for i in Accepted_Keys %}
                                                 <option>{{ i }}</option>
                                             {% empty %}
                                                 <option>还没有认证的主机</option>
                                             {% endfor %}
                                     </select>
-                                    <button class="btn btn-primary btn-xs" type="submit">删除</button>
+                                    <button class="btn btn-primary btn-xs" type="submit" id="Accepted_Key_Submit">删除</button>
 
                        </div>
-                     </form>
+
 
                         <div class="form-group">
                             <label style="color: red">等待认证：</label><span class="badge">{{ Unaccepted_Keys|length }}</span></span></h4>
@@ -49,9 +50,7 @@
                                 <option>全部已认证</option>
                             {% endfor %}
                             </select>
-
                         <button id="Unaccepted_Key_Submit" class="btn btn-primary btn-xs" type="submit">接受</button>
-
                         </div>
 
 
@@ -62,24 +61,55 @@
 {% endblock %}
 
 {% block js %}
+
 <script>
 $(document).ready(function() {
      $('#Unaccepted_Key_Submit').click(function (){
          var Unaccepted_Key=$('#Unaccepted_Key').val();
         $.ajax({
-            url:"http://127.0.0.1:8000/saltstack/accepted_keys",
+            url:"{% url 'accepted_key' %}",
             type: "POST",
             dataType: "json",
             data: { Unaccepted_Key: Unaccepted_Key },
             success:function (d) {
-                $('#tb_select').html(d);
-            },
+                $('#success_info').show();
+                $('#success_info').html(d);
+                function reload(){
+                     window.location.reload();
+                    }
+//                    延迟3秒执行reload刷新函数
+                setTimeout(reload, 3000);
+                 },
             error:function (e) {
-                alert(e)
-                $('#tb_select').html(e.responseText);
+                $('#error_info').html(e.responseText);
             }
     });
     });
+
+     $('#Accepted_Key_Submit').click(function (){
+         var Accepted_Key=$('#Accepted_Key').val();
+        $.ajax({
+            url:"{% url 'delete_key' %}",
+            type: "POST",
+            dataType: "json",
+            data: { Accepted_Key: Accepted_Key },
+            success:function (d) {
+                $('#success_info').show();
+                $('#success_info').html(d);
+                function reload(){
+                     window.location.reload();
+                    }
+//                    延迟3秒执行reload刷新函数
+                setTimeout(reload, 3000);
+                 },
+            error:function (e) {
+                $('#error_info').html(e.responseText);
+            }
+    });
+    });
+
+
+
  });
 
 </script>

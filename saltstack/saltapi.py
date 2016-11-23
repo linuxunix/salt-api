@@ -29,7 +29,7 @@ class SaltAPI(object):
     def list_all_key(self):
         form = {'client': 'wheel', 'fun': 'key.list_all'}
         form_data = urllib.urlencode(form)
-        headers = {'X-Auth-Token': SaltAPI().salt_login_token()}
+        headers = {'X-Auth-Token': self.salt_login_token()}
         request = urllib2.Request(
             url=self._url,
              headers=headers,
@@ -45,7 +45,7 @@ class SaltAPI(object):
     def accept_key(self,node_name):
         form = {'client': 'wheel', 'fun': 'key.accept', 'match': node_name}
         form_data = urllib.urlencode(form)
-        headers = {'X-Auth-Token': SaltAPI().salt_login_token()}
+        headers = {'X-Auth-Token': self.salt_login_token()}
         request = urllib2.Request(
             url=self._url,
              headers=headers,
@@ -61,19 +61,20 @@ class SaltAPI(object):
     def delete_key(self, node_name):
         form = {'client': 'wheel', 'fun': 'key.delete', 'match': node_name}
         form_data = urllib.urlencode(form)
-        headers = {'X-Auth-Token': SaltAPI().salt_login_token()}
+        headers = {'X-Auth-Token': self.salt_login_token()}
         request = urllib2.Request(
             url=self._url,
             headers=headers,
             data=form_data
         )
         response = json.load(urllib2.urlopen(request))
-        return '删除%s成功！' % node_name
+        info = '删除%s成功！' % node_name
+        return info
 
     def salt_remote_execution(self, tgt, fun):
         form = {'client': 'local', 'tgt': tgt, 'fun': fun}
         form_data = urllib.urlencode(form)
-        headers = {'X-Auth-Token': SaltAPI().salt_login_token()}
+        headers = {'X-Auth-Token': self.salt_login_token()}
         request = urllib2.Request(
             url=self._url,
              headers=headers,
@@ -86,4 +87,4 @@ class SaltAPI(object):
 # print SaltAPI().salt_remote_execution(tgt='*',fun='test.ping')
 # print SaltAPI().list_all_key()
 # print SaltAPI().accept_key(node_name='192.168.1.237')
-# print SaltAPI().delete_key(node_name='192.168.1.237')
+print SaltAPI().delete_key('192.168.1.248')
