@@ -67,7 +67,7 @@ $(document).ready(function() {
      $('#Unaccepted_Key_Submit').click(function (){
          var Unaccepted_Key=$('#Unaccepted_Key').val();
         $.ajax({
-            url:"http://127.0.0.1:8000/mysql_select/mysql_show/",
+            url:"http://127.0.0.1:8000/saltstack/accepted_keys",
             type: "POST",
             dataType: "json",
             data: { Unaccepted_Key: Unaccepted_Key },
