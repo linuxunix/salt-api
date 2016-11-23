@@ -1,8 +1,15 @@
 {% extends 'base.html' %}
+
+
+{% block css %}
+{% load staticfiles %}
+<script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+{% endblock %}
+
 {% block content-panel %}
 <h1 class="page-header">SaltStack</h1>
 
-    <div class="row placeholders">
+<div class="row placeholders">
 
         <ul class="nav nav-tabs" role="tablist">
           <li role="presentation" class="active"><a href="#">minion 认证管理</a></li>
@@ -11,6 +18,8 @@
            <li role="presentation"><a href="#">自动化部署应用</a></li>
         </ul>
     </div>
+
+
 <div class="container-fluid">
     <div class="row">
           <div class="col-md-3">
@@ -31,23 +40,48 @@
                        </div>
                      </form>
 
-                    <form action="/saltstack/key_accept/" method="get" role="form">
                         <div class="form-group">
                             <label style="color: red">等待认证：</label><span class="badge">{{ Unaccepted_Keys|length }}</span></span></h4>
-                            <select class="form-control" multiple="" name="match" style="background-color: black;color: red">
+                            <select   id="Unaccepted_Key" class="form-control" multiple="" name="match" style="background-color: black;color: red">
                             {% for i in Unaccepted_Keys %}
-                                <option>{{ i }}</option>
+                                <option name="Unaccepted_Key"> {{ i }} </option>
                             {% empty %}
                                 <option>全部已认证</option>
                             {% endfor %}
                             </select>
 
-                        <button class="btn btn-primary btn-xs" type="submit">接受</button>
+                        <button id="Unaccepted_Key_Submit" class="btn btn-primary btn-xs" type="submit">接受</button>
+
                         </div>
-                    </form>
+
 
           </div>
           </div>
     </div>
 </div>
+{% endblock %}
+
+{% block js %}
+<script>
+$(document).ready(function() {
+     $('#Unaccepted_Key_Submit').click(function (){
+         var Unaccepted_Key=$('#Unaccepted_Key').val();
+        $.ajax({
+            url:"http://127.0.0.1:8000/mysql_select/mysql_show/",
+            type: "POST",
+            dataType: "json",
+            data: { Unaccepted_Key: Unaccepted_Key },
+            success:function (d) {
+                $('#tb_select').html(d);
+            },
+            error:function (e) {
+                alert(e)
+                $('#tb_select').html(e.responseText);
+            }
+    });
+    });
+ });
+
+</script>
+
 {% endblock %}
