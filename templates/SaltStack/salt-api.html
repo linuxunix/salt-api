@@ -23,8 +23,8 @@
 <div class="container-fluid">
     <div class="row">
           <div class="alert alert-info" role="alert" align="center" id="success_info" style="display:none"></div>
-         <div class="col-md-3">
-               <h3>认证管理</h3>
+                 <div class="col-md-3">
+                   <h3>认证管理</h3>
                     <hr>
 
                        <div class="form-group">
@@ -54,6 +54,34 @@
                         </div>
 
 
+          </div>
+                 <!--<div class="col-md-1"></div>-->
+                 <div class="col-md-4">
+                       <h3>认证测试</h3>
+                       <hr>
+                       <div class="col-md-6">
+                                 <div class="form-group">
+                                     <label style="color: green">选择主机：</label><span class="badge"> {{ Accepted_Keys|length }}</span></span></h4>
+                                           <select id="Select_Host" class="form-control" multiple="" name="match" style="background-color: black;color: green">
+                                                    {% for i in Accepted_Keys %}
+                                                        <option>{{ i }}</option>
+                                                    {% empty %}
+                                                        <option>null</option>
+                                                    {% endfor %}
+                                            </select>
+                                            <button id="Select_Host_Submit" class="btn btn-primary btn-xs" type="submit" >测试主机</button>
+                                 </div>
+                        </div>
+                        <div class="col-md-13">
+                                  <div class="form-group">
+
+                                           <input type="text" id="test_info" class="form-control" style="background-color: black;color: green">
+
+                                            </input>
+                                 </div>
+                        </div>
+
+                 </div>
           </div>
           </div>
     </div>
@@ -108,6 +136,22 @@ $(document).ready(function() {
     });
     });
 
+     $('#Select_Host_Submit').click(function (){
+         var Select_Host=$('#Select_Host').val();
+//         alert(Select_Host);
+        $.ajax({
+            url:"{% url 'salt_test' %}",
+            type: "POST",
+            dataType: "json",
+            data: { Select_Host: Select_Host },
+            success:function (d) {
+                $('#test_info').val(d);
+             },
+            error:function (e) {
+                $('#error_info').html(e.responseText);
+            }
+    });
+    });
 
 
  });

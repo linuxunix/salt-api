@@ -71,8 +71,14 @@ class SaltAPI(object):
         info = '删除%s成功！' % node_name
         return info
 
-    def salt_remote_execution(self, tgt, fun):
-        form = {'client': 'local', 'tgt': tgt, 'fun': fun}
+
+#arg=0,noarg
+    def salt_remote_execution(self, tgt, fun,arg=0):
+        if arg == 0:
+           form = {'client': 'local', 'tgt': tgt, 'fun': fun}
+        else:
+           form = {'client': 'local', 'tgt': tgt, 'fun': fun, 'arg': arg}
+
         form_data = urllib.urlencode(form)
         headers = {'X-Auth-Token': self.salt_login_token()}
         request = urllib2.Request(
@@ -81,10 +87,10 @@ class SaltAPI(object):
             data=form_data
         )
         response = urllib2.urlopen(request)
-        return json.load(response)
+        return json.load(response)['return'][0]
 
-
-# print SaltAPI().salt_remote_execution(tgt='*',fun='test.ping')
+print SaltAPI().salt_remote_execution(tgt='*',fun='test.ping')
+print SaltAPI().salt_remote_execution(tgt='*',fun='cmd.run',arg='ifconfig')
 # print SaltAPI().list_all_key()
 # print SaltAPI().accept_key(node_name='192.168.1.237')
-print SaltAPI().delete_key('192.168.1.248')
+# print SaltAPI().delete_key('192.168.1.248')

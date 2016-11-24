@@ -22,3 +22,17 @@ def delete_key(request):
     result=SaltAPI().delete_key(node_name=str(node_name))
     return HttpResponse(json.dumps(result))
 
+@csrf_exempt
+def salt_test(request):
+    result=[]
+    result_show = []
+    node_name = request.POST.getlist('Select_Host[]')
+    if len(node_name) > 1:
+        for i in node_name:
+            result.append(SaltAPI().salt_remote_execution(tgt=str(i), fun='test.ping'))
+
+        return HttpResponse(json.dumps(str(result)),content_type='application/json')
+
+    else:
+        result.append(SaltAPI().salt_remote_execution(tgt=str(node_name[0]),fun='test.ping'))
+        return HttpResponse(json.dumps(str(result[0][0])),content_type='application/json')
