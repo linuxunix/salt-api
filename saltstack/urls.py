@@ -6,4 +6,5 @@ urlpatterns = [
          url(r'^accepted_key/$', views.accepted_key, name='accepted_key'),
          url(r'^delete_key/$', views.delete_key, name='delete_key'),
          url(r'^salt_test/$', views.salt_test, name='salt_test'),
+         url(r'^salt_many_cmd/$', views.salt_many_cmd, name='salt_many_cmd'),
     ]

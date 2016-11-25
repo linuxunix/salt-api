@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+
+
+{% block css %}
+{% load staticfiles %}
+<script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+{% endblock %}
+
+{% block content-panel %}
+<h1 class="page-header">SaltStack</h1>
+
+<div class="row placeholders">
+
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" ><a href="{% url 'salt-api' %}">minion 认证管理</a></li>
+          <li role="presentation"><a href="#">管理minion服务</a></li>
+          <li role="presentation" class="active" ><a href="{% url 'salt_many_cmd'%}">批量执行命令</a></li>
+           <li role="presentation"><a href="#">自动化部署应用</a></li>
+        </ul>
+    </div>
+
+
+<div class="container-fluid">
+    <div class="row">
+          <div class="alert alert-info" role="alert" align="center" id="success_info" style="display:none"></div>
+                 <div class="col-md-3">
+                   <h3>批量执行命令</h3>
+                    <hr>
+                            <form enctype="multipart/form-data" action="" method="POST">{% csrf_token %}
+                                   <label style="color: green">选择主机：</label><span class="badge"> {{ Accepted_Keys|length }}</span></span></h4>
+                                   <select id="match" class="form-control" multiple="" name="match" style="background-color: black;color: green">
+                                            {% for i in Accepted_Keys %}
+                                                <option>{{ i }}</option>
+                                            {% empty %}
+                                                <option>还没有认证的主机</option>
+                                            {% endfor %}
+                                    </select>
+                                  <label style="color: green">输入命令：</label>
+                                  <textarea id="cmd_args" type="" class="form-control" name="cmd_args"></textarea><br>
+                                  <input class="btn btn-primary btn-xs" type="button" value="执行" onclick="getDate()">
+                             </form>
+                 </div>
+
+                 <div class="col-md-5">
+                       <h3>执行结果</h3>
+                       <hr>
+                        <br>
+                                  <div class="form-group">
+
+                                           <textarea rows="10" id="test_info" class="form-control" style="background-color: black;color: green">
+
+                                            </textarea>
+
+                                        <div style="height: 100px" id="info1"></div>
+                                 </div>
+
+                 </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block js %}
+
+<script>
+    function getDate() {
+        var match = $("#match").val();
+        var cmd_args = $("#cmd_args").val();
+        $.ajax({
+            url: "{% url 'salt_many_cmd' %}",
+            type: "POST",
+            dataType: "json",
+            data: {"match": match, "cmd_args": cmd_args},
+            success: function (d) {
+                var txt=$("#test_info");
+                var msg="";
+                for(p in d){
+                    setinterval(function(){
+                        $.ajax(function(e){
+
+                        });
+
+                    },5000);
+
+                    msg+=((d[p])["minions"])[0]+"---"+  (d[p])["jid"];
+                    msg+="\r\n";
+                }
+                txt.val(msg);
+
+
+            }
+        });
+    }
+
+</script>
+
+<script>
+$(document).ready(function() {
+     $('#Unaccepted_Key_Submit').click(function (){
+         var Unaccepted_Key=$('#Unaccepted_Key').val();
+        $.ajax({
+            url:"{% url 'accepted_key' %}",
+            type: "POST",
+            dataType: "json",
+            data: { Unaccepted_Key: Unaccepted_Key },
+            success:function (d) {
+                $('#success_info').show();
+                $('#success_info').html(d);
+                function reload(){
+                     window.location.reload();
+                    }
+//                    延迟3秒执行reload刷新函数
+                setTimeout(reload, 3000);
+                 },
+            error:function (e) {
+                $('#error_info').html(e.responseText);
+            }
+    });
+    });
+ });
+
+</script>
+
+{% endblock %}
