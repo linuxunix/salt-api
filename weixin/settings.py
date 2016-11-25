@@ -124,9 +124,4 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
 
-MASTER_IP = '192.168.1.234'
-SALT_API_URL_LOGIN = 'https://192.168.1.234:8000/login'
-MASTER_API_URL = 'https://192.168.1.234:8000/'
-SALT_API_AUTH_USER = 'saltapi'
-SALT_API_AUTH_PASS = 'saltapi'
-
+from my_settings import *

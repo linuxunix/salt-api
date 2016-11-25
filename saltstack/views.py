@@ -42,11 +42,14 @@ def salt_many_cmd(request):
     Accepted_Keys = SaltAPI().list_all_key()[0]
     result=[]
     if request.method=='POST':
-        print request.POST
         cmd_args = request.POST.get('cmd_args')
         match = request.POST.getlist('match[]')
         for i in  match:
             result.append(SaltAPI().salt_remote_execution(client='local_async',tgt=str(i),fun='cmd.run',arg=cmd_args))
-        print result
         return HttpResponse(json.dumps(result))
     return render(request, 'SaltStack/salt_many_cmd.html',{'Accepted_Keys':Accepted_Keys})
+
+def salt_cmd_result(request):
+    jids = request.GET.getlist('jids[]')
+
+    return HttpResponse(json.dumps('xxxxxdddddddxxxxxxxx'))

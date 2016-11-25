@@ -43,16 +43,21 @@
 
                  <div class="col-md-5">
                        <h3>执行结果</h3>
-                       <hr>
-                        <br>
-                                  <div class="form-group">
+                       <!--<hr>-->
+                        <!--<br>-->
+                                  <!--<div class="form-group">-->
 
-                                           <textarea rows="10" id="test_info" class="form-control" style="background-color: black;color: green">
+                                           <!--<textarea rows="10" id="test_info" class="form-control" style="background-color: black;color: green">-->
 
-                                            </textarea>
+                                            <!--</textarea>-->
 
-                                        <div style="height: 100px" id="info1"></div>
-                                 </div>
+                                        <!--<div style="height: 100px" id="info1"></div>-->
+                                 <!--</div>-->
+                           <!--<hr/>-->
+                          <div id="result-box">
+
+
+                          </div>
 
                  </div>
     </div>
@@ -62,6 +67,35 @@
 {% block js %}
 
 <script>
+                     function RefreshGetTaskResult(jid) {
+                        GetTaskResult(jid);
+                        GetTaskResultInterval = setInterval(function () {
+                            GetTaskResult(jid);
+                        }, 300000)
+                    }
+
+                    function GetTaskResult(jid) {
+                         console.log(jid);
+                         var jids = new Array();
+                        for (i in jid){
+                            jids.push(jid[i]['jid']);
+                        }
+
+                        $.getJSON("{% url 'salt_cmd_result' %}", {jids:jids}, function (callback) {
+                            console.log(callback);
+                            PrintOnPage(callback)
+                        })
+                    }
+
+                    function PrintOnPage(callback) {
+                        $("#result-box").html(" ");
+                         $.each(callback,function(index,item){
+
+                         });
+                        $("#result-box").append(row_html);
+                    }
+
+
     function getDate() {
         var match = $("#match").val();
         var cmd_args = $("#cmd_args").val();
@@ -71,21 +105,8 @@
             dataType: "json",
             data: {"match": match, "cmd_args": cmd_args},
             success: function (d) {
-                var txt=$("#test_info");
-                var msg="";
-                for(p in d){
-                    setinterval(function(){
-                        $.ajax(function(e){
-
-                        });
-
-                    },5000);
-
-                    msg+=((d[p])["minions"])[0]+"---"+  (d[p])["jid"];
-                    msg+="\r\n";
-                }
-                txt.val(msg);
-
+//                console.log(d),
+                        RefreshGetTaskResult(d);
 
             }
         });
