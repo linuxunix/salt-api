@@ -71,8 +71,6 @@ class SaltAPI(object):
         info = '删除%s成功！' % node_name
         return info
 
-
-#arg=0,noarg
     def salt_remote_execution(self,tgt, fun,arg=0,client='local'):
         if arg == 0:
            form = {'client': client, 'tgt': tgt, 'fun': fun}
@@ -88,7 +86,7 @@ class SaltAPI(object):
         )
         response = urllib2.urlopen(request)
         return json.load(response)['return'][0]
-print SaltAPI().salt_remote_execution(client='local_async',tgt='192.168.1.237',fun='cmd.run',arg='free -m')
+
 # print SaltAPI().salt_remote_execution(tgt='*',fun='test.ping')
 # print SaltAPI().salt_remote_execution(tgt='*',fun='cmd.run',arg='ifconfig')
 # print SaltAPI().list_all_key()

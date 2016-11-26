@@ -76,3 +76,83 @@ class SaltAPI(object):
             pass
         return ret
 
+
+把salt执行结果保存到数据库中
+master：
+1.创建库名
+
+
+CREATE DATABASE  `salt`
+  DEFAULT CHARACTER SET utf8
+  DEFAULT COLLATE utf8_general_ci;
+
+2.创建jid表
+
+USE `salt`;
+
+--
+-- Table structure for table `jids`
+--
+
+DROP TABLE IF EXISTS `jids`;
+CREATE TABLE `jids` (
+  `jid` varchar(255) NOT NULL,
+  `load` mediumtext NOT NULL,
+  UNIQUE KEY `jid` (`jid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE INDEX jid ON jids(jid) USING BTREE;
+
+
+3.创建return表 存放返回的数据
+
+DROP TABLE IF EXISTS `salt_returns`;
+CREATE TABLE `salt_returns` (
+  `fun` varchar(50) NOT NULL,
+  `jid` varchar(255) NOT NULL,
+  `return` mediumtext NOT NULL,
+  `id` varchar(255) NOT NULL,
+  `success` varchar(10) NOT NULL,
+  `full_ret` mediumtext NOT NULL,
+  `alter_time` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  KEY `id` (`id`),
+  KEY `jid` (`jid`),
+  KEY `fun` (`fun`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Table structure for table `salt_events`
+--
+
+DROP TABLE IF EXISTS `salt_events`;
+CREATE TABLE `salt_events` (
+`id` BIGINT NOT NULL AUTO_INCREMENT,
+`tag` varchar(255) NOT NULL,
+`data` varchar(1024) NOT NULL,
+`alter_time` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+`master_id` varchar(255) NOT NULL,
+PRIMARY KEY (`id`),
+KEY `tag` (`tag`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+5.授权访问
+grant all onsalt.* tosalt@'%'identifiedby'salt';
+
+
+修改master配置文件 vim /etc/salt/master 新增以下内容：
+mysql.host:'salt'mysql.user:'salt'mysql.pass:'salt'mysql.db:'salt'mysql.port:3306
+minion
+
+
+修改minion配置文件：vim /etc/salt/minion
+mysql.host: '192.168.17.128'
+mysql.user: 'salt'
+mysql.pass: 'salt'
+mysql.db: 'salt'
+mysql.port: 3306
+master_job_cache: mysql               //使用此选项后，就不需要minion端配置
+
+以上方法需要在minion端部署MySQL-python
+
+yum install MySQL-python

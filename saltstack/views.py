@@ -63,8 +63,15 @@ def salt_cmd_result(request):
 
 @csrf_exempt
 def salt_deploy(request):
+    cmd = {'aliyum': 'aliyum.aliyum','jdk':'Jdk_Tomcat.jdk_install','tomcat1.8':'Jdk_Tomcat.tomcat8_install'}
+    fun = 'state.sls'
+    result=[]
     Accepted_Keys = SaltAPI().list_all_key()[0]
     if request.method=='POST':
         select_app = request.POST.get('select_app')
-        node_name = request.POST.getlist('Select_Host[]')
+        match = request.POST.getlist('match[]')
+        for i in match:
+            result.append(SaltAPI().salt_remote_execution(client='local_async',tgt=str(i),fun=fun,arg=cmd[select_app]))
+            print SaltAPI().salt_remote_execution(client='local',tgt=str(i),fun=fun,arg=cmd[select_app])
+        return HttpResponse(json.dumps(result))
     return render(request, 'SaltStack/salt_deploy.html', {'Accepted_Keys':Accepted_Keys})
