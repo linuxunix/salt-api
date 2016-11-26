@@ -1,9 +1,14 @@
 # -*- coding: utf-8 -*-
 from django.shortcuts import render
 from saltapi import SaltAPI
-import json
+from mysqlapi import MysqlApi
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
+try:
+    import json
+except ImportError:
+    import simplejson as json
+
 
 def salt_api(request):
     Accepted_Keys = SaltAPI().list_all_key()[0]
@@ -51,5 +56,15 @@ def salt_many_cmd(request):
 
 def salt_cmd_result(request):
     jids = request.GET.getlist('jids[]')
+    result=[]
+    for i in jids:
+        result.append(MysqlApi().salt_returns(i))
+    return HttpResponse(json.dumps(result))
 
-    return HttpResponse(json.dumps('xxxxxdddddddxxxxxxxx'))
+@csrf_exempt
+def salt_deploy(request):
+    Accepted_Keys = SaltAPI().list_all_key()[0]
+    if request.method=='POST':
+        select_app = request.POST.get('select_app')
+        node_name = request.POST.getlist('Select_Host[]')
+    return render(request, 'SaltStack/salt_deploy.html', {'Accepted_Keys':Accepted_Keys})

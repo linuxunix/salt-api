@@ -7,15 +7,15 @@
 {% endblock %}
 
 {% block content-panel %}
-<h1 class="page-header">SaltStack</h1>
+<h1 class="page-header">SaltStack自动化部署应用</h1>
 
 <div class="row placeholders">
 
         <ul class="nav nav-tabs" role="tablist">
           <li role="presentation" ><a href="{% url 'salt-api' %}">minion 认证管理</a></li>
           <li role="presentation"><a href="#">管理minion服务</a></li>
-          <li role="presentation" class="active" ><a href="{% url 'salt_many_cmd'%}">批量执行命令</a></li>
-           <li role="presentation"><a href="{% url 'salt_deploy' %}">自动化部署应用</a></li>
+          <li role="presentation" ><a href="{% url 'salt_many_cmd'%}">批量执行命令</a></li>
+           <li role="presentation" class="active" ><a href="{% url 'salt_deploy' %}">自动化部署应用</a></li>
         </ul>
     </div>
 
@@ -24,8 +24,6 @@
     <div class="row">
           <div class="alert alert-info" role="alert" align="center" id="success_info" style="display:none"></div>
                  <div class="col-md-3">
-                   <h3>批量执行命令</h3>
-                    <hr>
                             <form enctype="multipart/form-data" action="" method="POST">{% csrf_token %}
                                    <label style="color: green">选择主机：</label><span class="badge"> {{ Accepted_Keys|length }}</span></span></h4>
                                    <select id="match" class="form-control" multiple="" name="match" style="background-color: black;color: green">
@@ -35,10 +33,15 @@
                                                 <option>还没有认证的主机</option>
                                             {% endfor %}
                                     </select>
-                                  <label style="color: green">输入命令：</label>
-                                  <textarea id="cmd_args" type="" class="form-control" name="cmd_args"></textarea><br>
-                                  <input class="btn btn-primary btn-xs" type="button" value="执行" onclick="getDate()">
-                                  <input class="btn btn-primary btn-xs" type="button" value="刷新" onclick="relaod()">
+                                    <hr>
+                                   <label style="color: green">自动化部署应用：</label>
+                                    <div class="radio">
+                                        <label><input type="radio" name="app"  value="jdk"> jdk</label><br>
+                                        <label><input type="radio" name="app" value="tomcat"> tomcat<br></label><br>
+                                        <label><input type="radio" name="app"  value="nginx"> nginx<br></label><br>
+                                        <label><input type="radio" name="app"  value="redis"> redis<br></label><br>
+                                    </div>
+                                <label><input class="btn btn-primary btn-xs" type="button" value="执行部署" onclick="getDate()"></label>
                              </form>
                  </div>
 
@@ -66,12 +69,19 @@
     }
     function getDate() {
         var match = $("#match").val();
-        var cmd_args = $("#cmd_args").val();
+        var radios=document.getElementsByName("app");
+        for(var i=0;i<radios.length;i++)
+        {
+            if(radios[i].checked==true)
+            {
+                var select_app = radios[i].value;
+            }
+        }
         $.ajax({
-            url: "{% url 'salt_many_cmd' %}",
+            url: "{% url 'salt_deploy' %}",
             type: "POST",
             dataType: "json",
-            data: {"match": match, "cmd_args": cmd_args},
+            data: {"match": match, "select_app": select_app},
             success: function (d) {
 
                         RefreshGetTaskResult(d);

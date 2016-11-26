@@ -6,6 +6,7 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "weixin.settings")
 import django
 django.setup()
 import MySQLdb
+import json
 
 class MysqlApi(object):
     def __init__(self):
@@ -17,14 +18,12 @@ class MysqlApi(object):
         try:
             conn = MySQLdb.connect(host=self._host, user=self._user, passwd=self._pass, db=self._db)
             cur = conn.cursor()
-            recount = cur.execute("select * from salt_returns where jid='%s'"%jids)
+            recount = cur.execute("select full_ret from salt_returns where jid='%s'"%jids)
             date = cur.fetchall()
-            print recount
-            for i in date:
-                print i
+            ###str==>dict
+            return json.loads(date[0][0])
             cur.close()
             conn.close()
         except MySQLdb.Error, e:
             print "Mysql Error %d:%s" % (e.args[0], e.args[1])
 
-print MysqlApi().salt_returns('20161126012600949216')
