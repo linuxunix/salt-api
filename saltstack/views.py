@@ -63,15 +63,22 @@ def salt_cmd_result(request):
 
 @csrf_exempt
 def salt_deploy(request):
+    print request.POST
     cmd = {'aliyum': 'aliyum.aliyum','jdk':'Jdk_Tomcat.jdk_install','tomcat1.8':'Jdk_Tomcat.tomcat8_install'}
     fun = 'state.sls'
-    result=[]
+    result = []
+    error =""
     Accepted_Keys = SaltAPI().list_all_key()[0]
-    if request.method=='POST':
+    if request.method == 'POST':
         select_app = request.POST.get('select_app')
         match = request.POST.getlist('match[]')
+        if select_app=='' and ssh_id != '':
+            ssh_id = request.POST.get('ssh_id').split(',')
+        ##判断match和ssh_id都为''
+        # if match ==''and ssh_id=='':
+        error = '请选择执行主机或者输入salt_id'
         for i in match:
             result.append(SaltAPI().salt_remote_execution(client='local_async',tgt=str(i),fun=fun,arg=cmd[select_app]))
-            print SaltAPI().salt_remote_execution(client='local',tgt=str(i),fun=fun,arg=cmd[select_app])
         return HttpResponse(json.dumps(result))
     return render(request, 'SaltStack/salt_deploy.html', {'Accepted_Keys':Accepted_Keys})
+

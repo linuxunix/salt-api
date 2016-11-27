@@ -26,5 +26,5 @@ class MysqlApi(object):
             conn.close()
         except MySQLdb.Error, e:
             print "Mysql Error %d:%s" % (e.args[0], e.args[1])
-
-print MysqlApi().salt_returns('20161127013737936171')['return']
+#
+# print MysqlApi().salt_returns('20161127013737936171')['return']

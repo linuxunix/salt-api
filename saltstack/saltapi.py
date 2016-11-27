@@ -89,6 +89,6 @@ class SaltAPI(object):
 
 # print SaltAPI().salt_remote_execution(tgt='*',fun='test.ping')
 # print SaltAPI().salt_remote_execution(tgt='*',fun='cmd.run',arg='ifconfig')
-# print SaltAPI().list_all_key()
+print SaltAPI().salt_login_token()
 # print SaltAPI().accept_key(node_name='192.168.1.237')
 # print SaltAPI().delete_key('192.168.1.248')

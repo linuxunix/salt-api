@@ -1,0 +1,15 @@
+[root@localhost ~]# curl -k https://localhost:8000/     -H "Accept: application/x-yaml"      -H "X-Auth-Token:bc5c796da1c35b347e9a4015953cba5a260d2914"
+                    -d client='ssh' -d  tgt='docker'  -d fun='cmd.run' -d arg='free -m'
+return:
+- docker:
+    fun: cmd.run
+    fun_args:
+    - free -m
+    id: docker
+    jid: '20161127225842067178'
+    retcode: 0
+    return: '              total        used        free      shared  buff/cache   available
+
+      Mem:           1840        1495          79          23         264         128
+
+      Swap:          2047        2047           0'

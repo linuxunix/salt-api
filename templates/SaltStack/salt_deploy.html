@@ -22,6 +22,9 @@
 
 <div class="container-fluid">
     <div class="row">
+                {% if error %}
+                                <div class="alert alert-warning text-center">{{ error }}</div>
+                {% endif %}
           <div class="alert alert-info" role="alert" align="center" id="success_info" style="display:none"></div>
                  <div class="col-md-3">
                             <form enctype="multipart/form-data" action="" method="POST">{% csrf_token %}
@@ -34,6 +37,14 @@
                                             {% endfor %}
                                     </select>
                                     <hr>
+                                  <div class="col-lg-13">
+                                        <div class="input-group">
+                                          <input  id="ssh_id" type="text" class="form-control" placeholder='salt-ssh：输入执行ID'>
+                                          <span class="input-group-btn">
+                                          </span>
+                                        </div>
+                                   </div>
+
                                    <label style="color: green">自动化部署应用：</label>
                                     <div class="radio">
                                         <label><input type="radio" name="app"  value="aliyum"> 更换阿里源</label><br>
@@ -43,6 +54,7 @@
                                         <label><input type="radio" name="app"  value="redis"> redis<br></label><br>
                                     </div>
                                 <label><input class="btn btn-primary btn-xs" type="button" value="执行部署" onclick="getDate()"></label>
+                                 <!--<label><input class="btn btn-primary btn-xs" type="submit" value="执行部署" ></label>-->
                              </form>
                  </div>
 
@@ -70,6 +82,7 @@
     }
     function getDate() {
         var match = $("#match").val();
+        var  ssh_id =$("#ssh_id").val();
         var radios=document.getElementsByName("app");
         for(var i=0;i<radios.length;i++)
         {
@@ -82,47 +95,47 @@
             url: "{% url 'salt_deploy' %}",
             type: "POST",
             dataType: "json",
-            data: {"match": match, "select_app": select_app},
+            data: {"match": match, "select_app": select_app,"ssh_id":ssh_id},
             success: function (d) {
-
+                        console.log(d)
                         RefreshGetTaskResult(d);
             }
         });
     }
 
-                       function RefreshGetTaskResult(jid) {
+    function RefreshGetTaskResult(jid) {
                         GetTaskResult(jid);
                         GetTaskResultInterval = setInterval(function () {
                             GetTaskResult(jid);
                         }, 2000)
                     }
 
-                    function GetTaskResult(jid) {
-                         var jids = new Array();
-                        for (i in jid){
-                            jids.push(jid[i]['jid']);
-                        }
+    function GetTaskResult(jid) {
+         var jids = new Array();
+        for (i in jid){
+            jids.push(jid[i]['jid']);
+        }
 
-                        $.getJSON("{% url 'salt_cmd_result' %}", {jids:jids}, function (callback) {
+        $.getJSON("{% url 'salt_cmd_result' %}", {jids:jids}, function (callback) {
 //                            console.log(callback);
-                            PrintOnPage(callback)
-                        })
-                    }
+            PrintOnPage(callback)
+        })
+    }
 
-                    function PrintOnPage(callback) {
-                        $("#result-box").html(" ");
-                         $.each(callback,function(index,item){
-                            console.log(item);
-                            console.log(item.return);
-                            var row_html = "<p>" + item.id + " ---->" + item.fun_args[0] + " ----->" + "success:" +item.success + "</p>"+"" +
-                                    "<pre>" +JSON.stringify(item.return)+"</pre>"
-                             $("#result-box").append(row_html);
-                                  $.each(item.return,function(index,item){
-                                      row_html1="<pre>" +"comment"+JSON.stringify(item)+""+'<br>'+'result:"'+item.result+"</pre>"
-                                      $("#result-box").append(row_html1);
-                                  });
-                         });
-                    }
+    function PrintOnPage(callback) {
+        $("#result-box").html(" ");
+         $.each(callback,function(index,item){
+            console.log(item);
+            console.log(item.return);
+            var row_html = "<p>" + item.id + " ---->" + item.fun_args[0] + " ----->" + "success:" +item.success + "</p>"+"" +
+                    "<pre>" +JSON.stringify(item.return)+"</pre>"
+             $("#result-box").append(row_html);
+                  $.each(item.return,function(index,item){
+                      row_html1="<pre>" +"comment"+JSON.stringify(item)+""+'<br>'+'result:"'+item.result+"</pre>"
+                      $("#result-box").append(row_html1);
+                  });
+         });
+    }
 
 </script>
 
