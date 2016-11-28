@@ -4,11 +4,14 @@ from saltapi import SaltAPI
 from mysqlapi import MysqlApi
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
+import os
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "weixin.settings")
 try:
     import json
 except ImportError:
     import simplejson as json
 
+from saltstack.applet.decorators import page_render
 
 def salt_api(request):
     Accepted_Keys = SaltAPI().list_all_key()[0]
@@ -72,6 +75,7 @@ def salt_deploy(request):
     if request.method == 'POST':
         select_app = request.POST.get('select_app')
         match = request.POST.getlist('match[]')
+        ssh_id= request.POST.get('ssh_id')
         if select_app=='' and ssh_id != '':
             ssh_id = request.POST.get('ssh_id').split(',')
         ##判断match和ssh_id都为''
@@ -81,4 +85,31 @@ def salt_deploy(request):
             result.append(SaltAPI().salt_remote_execution(client='local_async',tgt=str(i),fun=fun,arg=cmd[select_app]))
         return HttpResponse(json.dumps(result))
     return render(request, 'SaltStack/salt_deploy.html', {'Accepted_Keys':Accepted_Keys})
+
+
+salt_dir='SaltStack/'
+@page_render( salt_dir+"salt-api.html")
+def test2(request):
+    pass
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

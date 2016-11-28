@@ -128,7 +128,7 @@
             console.log(item);
             console.log(item.return);
             var row_html = "<p>" + item.id + " ---->" + item.fun_args[0] + " ----->" + "success:" +item.success + "</p>"+"" +
-                    "<pre>" +JSON.stringify(item.return)+"</pre>"
+                    "<span>" +JSON.stringify(item.return)+"</span>"
              $("#result-box").append(row_html);
                   $.each(item.return,function(index,item){
                       row_html1="<pre>" +"comment"+JSON.stringify(item)+""+'<br>'+'result:"'+item.result+"</pre>"
