@@ -61,8 +61,7 @@
 
 <script>
     function relaod(){
-        var match= $("#match").val();
-        window.location.reload();
+        window.cleanData(GetTaskResultInterval);
     }
     function getDate() {
         var match = $("#match").val();
@@ -80,9 +79,12 @@
     }
 
                        function RefreshGetTaskResult(jid) {
+                        var timesRun = 0;
+                        var interval = setInterval(function(){
                         GetTaskResult(jid);
-                        GetTaskResultInterval = setInterval(function () {
-                            GetTaskResult(jid);
+                        timesRun += 1;
+                        if(timesRun === 2){
+                        clearInterval(interval);}
                         }, 2000)
                     }
 
@@ -99,13 +101,13 @@
                     }
 
                     function PrintOnPage(callback) {
-                        $("#result-box").html(" ");
+//                        $("#result-box").html(" ");
                          $.each(callback,function(index,item){
-                            console.log(item);
+//                            console.log(item);
                             var row_html = "<p>" + item.id + " ---->" + item.fun_args[0] + " ----->" + "success:" +item.success + "</p>"
                                 + "<pre>" +item.return+"</pre>"
-                            console.log(item.id);
-                            $("#result-box").append(row_html);
+//                            console.log(item.id);
+                            $("#result-box").empty().append(row_html);
                          });
                     }
 
