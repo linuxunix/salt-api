@@ -95,19 +95,18 @@
                         }
 
                         $.getJSON("{% url 'salt_cmd_result' %}", {jids:jids}, function (callback) {
-//                            console.log(callback);
                             PrintOnPage(callback)
                         })
                     }
 
                     function PrintOnPage(callback) {
-//                        $("#result-box").html(" ");
+                        $("#result-box").html(" ");
                          $.each(callback,function(index,item){
-//                            console.log(item);
+                            console.log(item.id);
                             var row_html = "<p>" + item.id + " ---->" + item.fun_args[0] + " ----->" + "success:" +item.success + "</p>"
-                                + "<pre>" +item.return+"</pre>"
-//                            console.log(item.id);
-                            $("#result-box").empty().append(row_html);
+                                + "<pre>" +item.return+"</pre>"+"<hr>"
+//                                console.log(item.id);
+                            $("#result-box").append(row_html);
                          });
                     }
 
