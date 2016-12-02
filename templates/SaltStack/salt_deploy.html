@@ -103,12 +103,17 @@
         });
     }
 
-    function RefreshGetTaskResult(jid) {
-                        GetTaskResult(jid);
-                        GetTaskResultInterval = setInterval(function () {
-                            GetTaskResult(jid);
-                        }, 2000)
-                    }
+
+       function RefreshGetTaskResult(jid) {
+            var timesRun = 0;
+            var interval = setInterval(function(){
+            GetTaskResult(jid);
+            timesRun += 1;
+            if(timesRun === 15){
+            clearInterval(interval);}
+            }, 2000)
+            }
+
 
     function GetTaskResult(jid) {
          var jids = new Array();
