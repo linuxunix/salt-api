@@ -45,6 +45,7 @@ def salt_test(request):
         result.append(SaltAPI().salt_remote_execution(tgt=str(node_name[0]),fun='test.ping'))
         return HttpResponse(json.dumps(str(result[0][0])),content_type='application/json')
 
+
 @csrf_exempt
 def salt_many_cmd(request):
     Accepted_Keys = SaltAPI().list_all_key()[0]
@@ -67,7 +68,7 @@ def salt_cmd_result(request):
 @csrf_exempt
 def salt_deploy(request):
     print request.POST
-    cmd = {'aliyum': 'aliyum.aliyum','jdk':'Jdk_Tomcat.jdk_install','tomcat1.8':'Jdk_Tomcat.tomcat8_install'}
+    cmd = {'aliyum': 'aliyum.aliyum','jdk':'Jdk_Tomcat.jdk_install','tomcat1.8':'Jdk_Tomcat.tomcat8_install','nginx':'nginx.nginx_install','nginx.conf':'nginx.nginx_conf'}
     fun = 'state.sls'
     result = []
     error =""
@@ -92,6 +93,10 @@ salt_dir='SaltStack/'
 def test2(request):
     pass
 
+
+def salt_web_deploy(request):
+    Accepted_Keys = SaltAPI().list_all_key()[0]
+    return render(request, 'SaltStack/salt_web_deploy.html', locals())
 
 
 

@@ -1,0 +1,173 @@
+{% extends 'base.html' %}
+
+
+{% block css %}
+{% load staticfiles %}
+        <script src="/static/bootstrap-fileinput/js/fileinput.js"></script>
+        <script src="/static/bootstrap-fileinput/js/fileinput_locale_zh.js"></script>
+        <script src="/static/bootstrap-fileinput/js/plugins/canvas-to-blob.js"></script>
+        <link href="/static/bootstrap-fileinput/css/fileinput.min.css" rel="stylesheet">
+        <script src="/static/bootstrap-fileinput/js/fileinput.js"></script>
+        <script src="/static/bootstrap-fileinput/js/fileinput_locale_zh.js"></script>
+        <script src="/static/bootstrap-fileinput/js/plugins/canvas-to-blob.js"></script>
+        <link href="/static/bootstrap-fileinput/css/fileinput.min.css" rel="stylesheet">
+
+<script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+{% endblock %}
+
+{% block content-panel %}
+<h1 class="page-header">SaltStack</h1>
+
+<div class="row placeholders">
+
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" ><a href="{% url 'salt-api' %}">minion 认证管理</a></li>
+          <li role="presentation"><a href="#">管理minion服务</a></li>
+          <li role="presentation"><a href="{% url 'salt_many_cmd'%}">批量执行命令</a></li>
+           <li role="presentation"><a href="{% url 'salt_deploy' %}">自动化部署应用</a></li>
+          <li role="presentation" class="active"><a href="{% url 'salt_web_deploy' %}">网站发布</a></li>
+        </ul>
+    </div>
+
+
+<div class="container-fluid">
+    <div class="row">
+          <div class="alert alert-info" role="alert" align="center" id="success_info" style="display:none"></div>
+                  <div class="col-md-3">
+                       <form enctype="multipart/form-data" action="" method="POST">{% csrf_token %}
+                             <div class="panel panel-default panel-right">
+                                    <label for="id_type">请选择主机/主机组：</label>
+                                     <select  id="task_type" class="selectpicker">
+                                            <option value="file_send">主机</option>
+                                            <option value="file_get">主机组</option>
+                                            </select>
+                                    <select id="match" class="form-control" multiple="" name="match" style="background-color: black;color: green">
+                                        {% for i in Accepted_Keys %}
+                                            <option>{{ i }}</option>
+                                        {% empty %}
+                                            <option>还没有认证的主机</option>
+                                        {% endfor %}
+                                    </select>
+                                      <hr>
+                                      <input id="file_upload" name="filename" type="file" multiple class="file-loading">
+                                      <div class="form-group">
+                                        <label for="exampleInputName2">远程文件路径</label>
+                                        <input type="text" placeholder="必须输入绝对路径，不要包含文件名" class="form-control" name="remote_file_path" id="remote_file_path" >
+                                      </div>
+                                      <button type="button" class="btn btn-success pull-right" onclick="SubmitTask('multi_file_transfer')">执行任务</button>
+                             </div>
+                         </form>
+                        <label><input class="btn btn-primary btn-xs" type="button" value="执行部署" onclick="getDate()"></label>
+                 </div>
+                 <!--<div class="col-md-1"></div>-->
+
+          </div>
+</div>
+
+{% endblock %}
+
+{% block js %}
+   <script type="text/javascript">
+         $(document).ready(function(){
+
+                upload_files = [];
+
+                $("#file_upload").fileinput({
+                    uploadUrl: "#", // 上传路径
+                    uploadAsync: true,
+                    language:'zh',
+                    maxFileSize:2000,
+                    maxFileCount: 5,
+
+                });
+                $('#file_upload').on('fileuploaded', function(event, data, previewId, index) {
+                    var form = data.form, files = data.files, extra = data.extra,
+                        response = data.response, reader = data.reader;
+
+                        console.log(response);
+                        upload_files.push(response.uploaded_file_path);
+                });
+
+                $("#task_type").on("change",function(){
+                    if (this.value == 'file_send'){
+                        $(".file-input").removeClass("hide");
+                        $("#file-download-to-local").addClass("hide")
+                    }else{
+                        $(".file-input").addClass("hide");
+                        $("#file-download-to-local").removeClass("hide")
+                    }
+
+                });//end on change
+
+
+         });
+        </script>
+<script>
+$(document).ready(function() {
+     $('#Unaccepted_Key_Submit').click(function (){
+         var Unaccepted_Key=$('#Unaccepted_Key').val();
+        $.ajax({
+            url:"{% url 'accepted_key' %}",
+            type: "POST",
+            dataType: "json",
+            data: { Unaccepted_Key: Unaccepted_Key },
+            success:function (d) {
+                $('#success_info').show();
+                $('#success_info').html(d);
+                function reload(){
+                     window.location.reload();
+                    }
+//                    延迟3秒执行reload刷新函数
+                setTimeout(reload, 3000);
+                 },
+            error:function (e) {
+                $('#error_info').html(e.responseText);
+            }
+    });
+    });
+
+     $('#Accepted_Key_Submit').click(function (){
+         var Accepted_Key=$('#Accepted_Key').val();
+        $.ajax({
+            url:"{% url 'delete_key' %}",
+            type: "POST",
+            dataType: "json",
+            data: { Accepted_Key: Accepted_Key },
+            success:function (d) {
+                $('#success_info').show();
+                $('#success_info').html(d);
+                function reload(){
+                     window.location.reload();
+                    }
+//                    延迟3秒执行reload刷新函数
+                setTimeout(reload, 3000);
+                 },
+            error:function (e) {
+                $('#error_info').html(e.responseText);
+            }
+    });
+    });
+
+     $('#Select_Host_Submit').click(function (){
+         var Select_Host=$('#Select_Host').val();
+//         alert(Select_Host);
+        $.ajax({
+            url:"{% url 'salt_test' %}",
+            type: "POST",
+            dataType: "json",
+            data: { Select_Host: Select_Host },
+            success:function (d) {
+                $('#test_info').val(d);
+             },
+            error:function (e) {
+                $('#error_info').html(e.responseText);
+            }
+    });
+    });
+
+
+ });
+
+</script>
+
+{% endblock %}

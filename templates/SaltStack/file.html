@@ -1,0 +1,39 @@
+ <div class="col-md-6">
+          <div class="ibox-content">
+       <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+             {% if error %}
+                   <div class="alert alert-success text-center">{{ error }}</div>
+            {% endif %}
+        <h4 style="color: #1eacae">请选择执行主机</h4>
+           <form enctype="multipart/form-data" action="" method="POST">{% csrf_token %}
+                    {% for host in host_list %}
+                              <input type="checkbox"  value={{ host.ip_addr}} name='select_host'> {{ host }}
+                        {% endfor %}
+               <div class="panel panel-default panel-right">
+                            <label for="id_type">请选择上传/下载:</label>
+                              <select  id="task_type" class="selectpicker">
+
+                                <option value="file_send">分发文件到客户端</option>
+                                <option value="file_get">从客户端下载文件</option>
+                              </select>
+
+                              <input id="file_upload" name="filename" type="file" multiple class="file-loading">
+
+
+                              <div class="form-group">
+                                <label for="exampleInputName2">远程文件路径</label>
+                                <input type="text" placeholder="必须输入绝对路径，不要包含文件名" class="form-control" name="remote_file_path" id="remote_file_path" >
+                              </div>
+                              <button type="button" class="btn btn-success pull-right" onclick="SubmitTask('multi_file_transfer')">执行任务</button>
+                              </div>
+            </form>
+                  <div id="err-msgs"></div>
+                      <hr/>
+                  <div id="result-box"> </div>
+      </table>
+</div>
+</div>
+
+
+
+

@@ -1,4 +1,4 @@
-from django.conf.urls import patterns, include, url
+from django.conf.urls import include, url
 from saltstack import views
 from saltstack.applet.decorators import page_render
 
@@ -11,5 +11,5 @@ urlpatterns = [
          url(r'^salt_many_cmd/$', views.salt_many_cmd, name='salt_many_cmd'),
          url(r'^salt_cmd_result/$', views.salt_cmd_result, name='salt_cmd_result'),
          url(r'^salt_deploy/$', views.salt_deploy, name='salt_deploy'),
-         url(r'^test2.html$', views.test2),
+         url(r'^salt_web_deploy/$', views.salt_web_deploy, name='salt_web_deploy'),
     ]

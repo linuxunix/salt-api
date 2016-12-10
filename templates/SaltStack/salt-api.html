@@ -2,7 +2,9 @@
 
 
 {% block css %}
+
 {% load staticfiles %}
+
 <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
 {% endblock %}
 
@@ -16,6 +18,7 @@
           <li role="presentation"><a href="#">管理minion服务</a></li>
           <li role="presentation"><a href="{% url 'salt_many_cmd'%}">批量执行命令</a></li>
            <li role="presentation"><a href="{% url 'salt_deploy' %}">自动化部署应用</a></li>
+           <li role="presentation"><a href="{% url 'salt_web_deploy' %}">网站发布</a></li>
         </ul>
     </div>
 

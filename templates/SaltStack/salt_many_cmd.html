@@ -15,7 +15,8 @@
           <li role="presentation" ><a href="{% url 'salt-api' %}">minion 认证管理</a></li>
           <li role="presentation"><a href="#">管理minion服务</a></li>
           <li role="presentation" class="active" ><a href="{% url 'salt_many_cmd'%}">批量执行命令</a></li>
-           <li role="presentation"><a href="{% url 'salt_deploy' %}">自动化部署应用</a></li>
+          <li role="presentation"><a href="{% url 'salt_deploy' %}">自动化部署应用</a></li>
+          <li role="presentation" ><a href="{% url 'salt_web_deploy' %}">网站发布</a></li>
         </ul>
     </div>
 
@@ -82,7 +83,7 @@
                         var interval = setInterval(function(){
                         GetTaskResult(jid);
                         timesRun += 1;
-                        if(timesRun === 2){
+                        if(timesRun === 5){
                         clearInterval(interval);}
                         }, 2000)
                     }

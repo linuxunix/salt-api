@@ -16,6 +16,7 @@
           <li role="presentation"><a href="#">管理minion服务</a></li>
           <li role="presentation" ><a href="{% url 'salt_many_cmd'%}">批量执行命令</a></li>
            <li role="presentation" class="active" ><a href="{% url 'salt_deploy' %}">自动化部署应用</a></li>
+          <li role="presentation" ><a href="{% url 'salt_web_deploy' %}">网站发布</a></li>
         </ul>
     </div>
 
@@ -51,6 +52,7 @@
                                         <label><input type="radio" name="app" value="jdk"> jdk<br></label><br>
                                         <label><input type="radio" name="app" value="tomcat1.8"> tomcat1.8<br></label><br>
                                         <label><input type="radio" name="app"  value="nginx"> nginx<br></label><br>
+                                        <label><input type="radio" name="app"  value="nginx.conf"> nginx.conf<br></label><br>
                                         <label><input type="radio" name="app"  value="redis"> redis<br></label><br>
                                     </div>
                                 <label><input class="btn btn-primary btn-xs" type="button" value="执行部署" onclick="getDate()"></label>
@@ -109,7 +111,7 @@
             var interval = setInterval(function(){
             GetTaskResult(jid);
             timesRun += 1;
-            if(timesRun === 15){
+            if(timesRun === 500){
             clearInterval(interval);}
             }, 2000)
             }
