@@ -2,67 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb42861b-cdfe-4180-a4b0-3779b3bbdf26" name="默认的" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-fileinput/img/loading-sm.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-fileinput/img/loading.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-fileinput/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-fileinput/CHANGE.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-fileinput/LICENSE.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-fileinput/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-fileinput/bower.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-fileinput/composer.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-fileinput/css/fileinput.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-fileinput/css/fileinput.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-fileinput/examples/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-fileinput/fileinput.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-fileinput/fileinput_locale_zh.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-fileinput/js/fileinput.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-fileinput/js/fileinput.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-fileinput/js/fileinput_locale_LANG.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-fileinput/js/fileinput_locale_cr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-fileinput/js/fileinput_locale_cz.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-fileinput/js/fileinput_locale_da.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-fileinput/js/fileinput_locale_de.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-fileinput/js/fileinput_locale_el.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-fileinput/js/fileinput_locale_es.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-fileinput/js/fileinput_locale_fa.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-fileinput/js/fileinput_locale_fr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-fileinput/js/fileinput_locale_hu.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-fileinput/js/fileinput_locale_it.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-fileinput/js/fileinput_locale_ja.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-fileinput/js/fileinput_locale_nl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-fileinput/js/fileinput_locale_pl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-fileinput/js/fileinput_locale_pt-BR.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-fileinput/js/fileinput_locale_pt.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-fileinput/js/fileinput_locale_ro.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-fileinput/js/fileinput_locale_ru.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-fileinput/js/fileinput_locale_sk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-fileinput/js/fileinput_locale_th.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-fileinput/js/fileinput_locale_tr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-fileinput/js/fileinput_locale_uk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-fileinput/js/fileinput_locale_zh-TW.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-fileinput/js/fileinput_locale_zh.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-fileinput/js/plugins/canvas-to-blob.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-fileinput/js/plugins/canvas-to-blob.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-fileinput/js/plugins/fileinput.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-fileinput/js/plugins/fileinput_locale_bg.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-fileinput/nuget/Package.nuspec" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap-fileinput/nuget/build.bat" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/SaltStack/file.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/SaltStack/salt_web_deploy.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zabbix/applet/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zabbix/applet/const.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zabbix/applet/decorators.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zabbix/applet/response.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zabbix/applet/utils.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zabbix/zabbixapi.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mysql_salt.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/saltstack/models.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wechat/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wechat/admin.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wechat/apps.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wechat/migrations/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wechat/models.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wechat/tests.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wechat/views.py" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manage.py" afterPath="$PROJECT_DIR$/manage.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/saltstack/mysqlapi.py" afterPath="$PROJECT_DIR$/saltstack/mysqlapi.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/saltstack/saltapi.py" afterPath="$PROJECT_DIR$/saltstack/saltapi.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/saltstack/urls.py" afterPath="$PROJECT_DIR$/saltstack/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/saltstack/views.py" afterPath="$PROJECT_DIR$/saltstack/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/SaltStack/salt-api.html" afterPath="$PROJECT_DIR$/templates/SaltStack/salt-api.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/SaltStack/salt_deploy.html" afterPath="$PROJECT_DIR$/templates/SaltStack/salt_deploy.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/SaltStack/salt_many_cmd.html" afterPath="$PROJECT_DIR$/templates/SaltStack/salt_many_cmd.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/weixin/settings.py" afterPath="$PROJECT_DIR$/weixin/settings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zabbix/zabbixapi.py" afterPath="$PROJECT_DIR$/zabbix/zabbixapi.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/weixin/__init__.py" afterPath="$PROJECT_DIR$/salt/__init__.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/weixin/my_settings.py" afterPath="$PROJECT_DIR$/salt/my_settings.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/weixin/settings.py" afterPath="$PROJECT_DIR$/salt/settings.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/weixin/urls.py" afterPath="$PROJECT_DIR$/salt/urls.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/weixin/wsgi.py" afterPath="$PROJECT_DIR$/salt/wsgi.py" />
     </list>
     <ignored path="salt-api.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -80,11 +42,13 @@
     <SUITE FILE_PATH="coverage/salt-api$my_settings.coverage" NAME="my_settings Coverage Results" MODIFIED="1480093245354" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/weixin" />
     <SUITE FILE_PATH="coverage/salt-api$mysqlapi.coverage" NAME="mysqlapi Coverage Results" MODIFIED="1480644827481" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/saltstack" />
     <SUITE FILE_PATH="coverage/salt-api$saltapi.coverage" NAME="saltapi Coverage Results" MODIFIED="1480993663107" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/saltstack" />
-    <SUITE FILE_PATH="coverage/salt-api$Unittests_in_salt_api.coverage" NAME="Unittests in salt-api Coverage Results" MODIFIED="1480296537724" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/salt-api$Unittests_in_salt_api__1_.coverage" NAME="Unittests in salt-api (1) Coverage Results" MODIFIED="1480583561874" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/salt-api$Unittests_in_salt_api__3_.coverage" NAME="Unittests in salt-api (3) Coverage Results" MODIFIED="1487141273707" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/salt-api$Unittests_in_salt_api.coverage" NAME="Unittests in salt-api Coverage Results" MODIFIED="1487141207260" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/salt-api$Unittests_in_salt_api__1_.coverage" NAME="Unittests in salt-api (1) Coverage Results" MODIFIED="1487141252268" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/salt-api$Unittests_in_salt_api__4_.coverage" NAME="Unittests in salt-api (4) Coverage Results" MODIFIED="1487141309715" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/salt-api$views.coverage" NAME="views Coverage Results" MODIFIED="1480061751077" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/saltstack" />
-    <SUITE FILE_PATH="coverage/salt-api$zabbixapi.coverage" NAME="zabbixapi Coverage Results" MODIFIED="1481013449461" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/zabbix" />
-    <SUITE FILE_PATH="coverage/salt-api$Unittests_in_salt_api__2_.coverage" NAME="Unittests in salt-api (2) Coverage Results" MODIFIED="1479958918518" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/salt-api$zabbixapi.coverage" NAME="zabbixapi Coverage Results" MODIFIED="1487141160743" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/zabbix" />
+    <SUITE FILE_PATH="coverage/salt-api$Unittests_in_salt_api__2_.coverage" NAME="Unittests in salt-api (2) Coverage Results" MODIFIED="1487141235474" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -98,19 +62,11 @@
       <file leaf-file-name="saltapi.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/saltstack/saltapi.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="729">
-              <caret line="94" column="0" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="salt-api.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/saltstack/salt-api.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="8" column="30" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="30" />
-              <folding />
+            <state relative-caret-position="190">
+              <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+              <folding>
+                <element signature="e#24#56#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -118,7 +74,7 @@
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/saltstack/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
+            <state relative-caret-position="133">
               <caret line="9" column="24" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="25" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
@@ -130,25 +86,35 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/saltstack/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="23" />
               <folding>
-                <element signature="e#437#592#0" expanded="false" />
-                <element signature="e#638#788#0" expanded="false" />
-                <element signature="e#832#980#0" expanded="false" />
-                <element signature="e#1580#2047#0" expanded="false" />
-                <element signature="e#2083#2246#0" expanded="false" />
-                <element signature="e#2291#3247#0" expanded="false" />
+                <element signature="e#435#590#0" expanded="false" />
+                <element signature="e#636#786#0" expanded="false" />
+                <element signature="e#830#978#0" expanded="false" />
+                <element signature="e#1578#2045#0" expanded="false" />
+                <element signature="e#2081#2244#0" expanded="false" />
+                <element signature="e#2289#3245#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/weixin/settings.py">
+        <entry file="file://$PROJECT_DIR$/salt/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+            <state relative-caret-position="285">
+              <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="my_settings.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/salt/my_settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="152">
+              <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -157,8 +123,8 @@
       <file leaf-file-name="salt_many_cmd.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/SaltStack/salt_many_cmd.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
-              <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="65" />
+            <state relative-caret-position="133">
+              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding>
                 <element signature="n#div#1;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
@@ -174,8 +140,8 @@
       <file leaf-file-name="salt-api.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/SaltStack/salt-api.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+            <state relative-caret-position="228">
+              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding>
                 <element signature="n#div#0;n#div#2;n#div#0;n#div#1;n#!!top" expanded="false" />
                 <element signature="n#div#0;n#div#1;n#div#2;n#div#0;n#div#1;n#!!top" expanded="false" />
@@ -184,7 +150,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="salt_web_deploy.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="salt_web_deploy.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/SaltStack/salt_web_deploy.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="19">
@@ -209,15 +175,18 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="salt_deploy.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="salt_deploy.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/SaltStack/salt_deploy.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="65" />
+            <state relative-caret-position="395">
+              <caret line="148" column="5" selection-start-line="148" selection-start-column="5" selection-end-line="148" selection-end-column="5" />
               <folding>
+                <element signature="n#div#0;n#!!top" expanded="false" />
+                <element signature="n#div#1;n#!!top" expanded="false" />
                 <element signature="n#div#2;n#div#0;n#div#1;n#!!top" expanded="false" />
                 <element signature="n#select#0;n#form#0;n#div#2;n#div#0;n#div#1;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#label#1;n#form#0;n#div#2;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#script#1;n#!!top" expanded="false" />
                 <element signature="e#4455#4584#0" expanded="false" />
               </folding>
             </state>
@@ -264,6 +233,9 @@
         <option value="$PROJECT_DIR$/saltstack/views.py" />
         <option value="$PROJECT_DIR$/templates/SaltStack/salt-api.html" />
         <option value="$PROJECT_DIR$/templates/SaltStack/salt_web_deploy.html" />
+        <option value="$PROJECT_DIR$/salt/settings.py" />
+        <option value="$PROJECT_DIR$/saltstack/models.py" />
+        <option value="$PROJECT_DIR$/salt/my_settings.py" />
       </list>
     </option>
   </component>
@@ -274,10 +246,29 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="744" />
+    <option name="y" value="18" />
+    <option name="width" value="1312" />
+    <option name="height" value="911" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Python</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>PyCompatibilityInspection</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -310,8 +301,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -340,21 +331,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="weixin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="salt-api" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="salt-api" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wechat" />
+              <option name="myItemId" value="templates" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -369,6 +346,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SaltStack" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -386,6 +367,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="salt-api" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="salt-api" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="salt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -395,7 +390,7 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
-    <property name="last_opened_file_path" value="D:/web code/CMDB2" />
+    <property name="last_opened_file_path" value="D:/salt-api" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
@@ -407,59 +402,51 @@
       <recent name="E:\salt-api\templates\SaltStack" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.zabbixapi">
-    <configuration default="false" name="saltapi" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python tests.Unittests in salt-api (4)">
+    <configuration default="false" name="Unittests in salt-api" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:/Python27/python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/saltstack" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="salt-api" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/saltstack/saltapi.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="$PROJECT_DIR$" />
+      <option name="TEST_TYPE" value="TEST_FOLDER" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="mysqlapi" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration default="false" name="Unittests in salt-api (2)" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:/Python27/python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/saltstack" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="salt-api" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/saltstack/mysqlapi.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="tests" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:/Python27/python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/saltstack" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="salt-api" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/saltstack/tests.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="$PROJECT_DIR$" />
+      <option name="TEST_TYPE" value="TEST_FOLDER" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
     <configuration default="false" name="Unittests in salt-api (1)" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
@@ -485,22 +472,50 @@
       <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="zabbixapi" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration default="false" name="Unittests in salt-api (3)" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
+      <envs />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/zabbix" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="salt-api" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/zabbix/zabbixapi.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="$PROJECT_DIR$" />
+      <option name="TEST_TYPE" value="TEST_FOLDER" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittests in salt-api (4)" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="salt-api" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="$PROJECT_DIR$" />
+      <option name="TEST_TYPE" value="TEST_FOLDER" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
@@ -754,19 +769,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Python.views" />
-      <item index="1" class="java.lang.String" itemvalue="Python.saltapi" />
-      <item index="2" class="java.lang.String" itemvalue="Python.mysqlapi" />
-      <item index="3" class="java.lang.String" itemvalue="Python.tests" />
-      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in salt-api (1)" />
-      <item index="5" class="java.lang.String" itemvalue="Python.zabbixapi" />
+      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in salt-api" />
+      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in salt-api (2)" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in salt-api (1)" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in salt-api (3)" />
+      <item index="5" class="java.lang.String" itemvalue="Python tests.Unittests in salt-api (4)" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.zabbixapi" />
-        <item index="1" class="java.lang.String" itemvalue="Python.saltapi" />
-        <item index="2" class="java.lang.String" itemvalue="Python.mysqlapi" />
-        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in salt-api (1)" />
-        <item index="4" class="java.lang.String" itemvalue="Python.tests" />
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in salt-api (4)" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in salt-api (3)" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in salt-api (1)" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in salt-api (2)" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in salt-api" />
       </list>
     </recent_temporary>
   </component>
@@ -907,10 +922,7 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_in_salt-api - 2016.11.22 at 17h 19m 13s.xml">
-      <configuration name="Unittests in salt-api" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_salt-api - 2016.11.28 at 09h 28m 58s.xml">
+    <history-entry file="Unittests_in_salt-api - 2017.02.15 at 14h 46m 47s.xml">
       <configuration name="Unittests in salt-api" configurationId="tests" />
     </history-entry>
     <history-entry file="Unittests_in_salt-api_(1) - 2016.11.23 at 09h 32m 41s.xml">
@@ -919,8 +931,26 @@
     <history-entry file="Unittests_in_salt-api_(1) - 2016.12.01 at 17h 12m 45s.xml">
       <configuration name="Unittests in salt-api (1)" configurationId="tests" />
     </history-entry>
+    <history-entry file="Unittests_in_salt-api_(1) - 2017.02.15 at 14h 47m 32s.xml">
+      <configuration name="Unittests in salt-api (1)" configurationId="tests" />
+    </history-entry>
     <history-entry file="Unittests_in_salt-api_(2) - 2016.11.24 at 11h 41m 59s.xml">
       <configuration name="Unittests in salt-api (2)" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_salt-api_(2) - 2017.02.15 at 14h 46m 54s.xml">
+      <configuration name="Unittests in salt-api (2)" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_salt-api_(2) - 2017.02.15 at 14h 47m 11s.xml">
+      <configuration name="Unittests in salt-api (2)" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_salt-api_(2) - 2017.02.15 at 14h 47m 15s.xml">
+      <configuration name="Unittests in salt-api (2)" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_salt-api_(3) - 2017.02.15 at 14h 47m 54s.xml">
+      <configuration name="Unittests in salt-api (3)" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_salt-api_(4) - 2017.02.15 at 14h 48m 30s.xml">
+      <configuration name="Unittests in salt-api (4)" configurationId="tests" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -933,21 +963,22 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <frame x="744" y="18" width="1312" height="911" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16791044" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="版本控制" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32719395" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="调试" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3784764" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3347779" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33419022" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.035714287" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3007712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3907455" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25638977" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="版本控制" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32647815" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30227518" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43228602" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="找到" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -959,7 +990,6 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="找到" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -990,7 +1020,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="11" />
+      <option name="time" value="12" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1171,20 +1201,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/saltstack/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="11" column="43" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/weixin/my_settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="950">
@@ -1224,9 +1240,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
           <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
-          <folding>
-            <element signature="e#24#39#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1234,9 +1247,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
           <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
-          <folding>
-            <element signature="e#24#41#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1244,7 +1254,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1252,43 +1261,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="8" selection-end-column="11" />
-          <folding>
-            <marker date="1480644862386" expanded="true" signature="620:668" ph="select full_... salt_returns" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/websocket.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#39#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/websocket.html" />
+    <entry file="file://$PROJECT_DIR$/assets/models.py" />
     <entry file="file://$PROJECT_DIR$/zabbix/zabbixapi.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="494">
           <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/weixin/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1300,50 +1281,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/saltstack/saltapi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="729">
-          <caret line="94" column="0" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/SaltStack/salt_many_cmd.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="65" />
-          <folding>
-            <element signature="n#div#1;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#form#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#0;n#form#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#1;n#form#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#script#1;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/saltstack/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
+        <state relative-caret-position="133">
           <caret line="9" column="24" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="25" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/saltstack/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-          <folding>
-            <element signature="e#437#592#0" expanded="false" />
-            <element signature="e#638#788#0" expanded="false" />
-            <element signature="e#832#980#0" expanded="false" />
-            <element signature="e#1580#2047#0" expanded="false" />
-            <element signature="e#2083#2246#0" expanded="false" />
-            <element signature="e#2291#3247#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1352,20 +1295,55 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/saltstack/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="23" />
+          <folding>
+            <element signature="e#435#590#0" expanded="false" />
+            <element signature="e#636#786#0" expanded="false" />
+            <element signature="e#830#978#0" expanded="false" />
+            <element signature="e#1578#2045#0" expanded="false" />
+            <element signature="e#2081#2244#0" expanded="false" />
+            <element signature="e#2289#3245#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/saltstack/saltapi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+          <folding>
+            <element signature="e#24#56#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/salt/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/SaltStack/salt_deploy.html">
+    <entry file="file://$PROJECT_DIR$/saltstack/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="65" />
-          <folding>
-            <element signature="n#div#2;n#div#0;n#div#1;n#!!top" expanded="false" />
-            <element signature="n#select#0;n#form#0;n#div#2;n#div#0;n#div#1;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#label#1;n#form#0;n#div#2;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="e#4455#4584#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="703">
+          <caret line="37" column="39" selection-start-line="37" selection-start-column="39" selection-end-line="37" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/salt/my_settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1379,11 +1357,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/SaltStack/salt-api.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        <state relative-caret-position="228">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding>
             <element signature="n#div#0;n#div#2;n#div#0;n#div#1;n#!!top" expanded="false" />
             <element signature="n#div#0;n#div#1;n#div#2;n#div#0;n#div#1;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/SaltStack/salt_many_cmd.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding>
+            <element signature="n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#form#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#select#0;n#form#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#1;n#form#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#script#1;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1397,6 +1390,22 @@
             <element signature="n#select#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="false" />
             <element signature="n#select#1;n#div#0;n#form#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="false" />
             <element signature="n#script#8;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/SaltStack/salt_deploy.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="395">
+          <caret line="148" column="5" selection-start-line="148" selection-start-column="5" selection-end-line="148" selection-end-column="5" />
+          <folding>
+            <element signature="n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#select#0;n#form#0;n#div#2;n#div#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#label#1;n#form#0;n#div#2;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#script#1;n#!!top" expanded="false" />
+            <element signature="e#4455#4584#0" expanded="false" />
           </folding>
         </state>
       </provider>

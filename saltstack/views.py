@@ -5,7 +5,7 @@ from mysqlapi import MysqlApi
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 import os
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "weixin.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "salt.settings")
 try:
     import json
 except ImportError:

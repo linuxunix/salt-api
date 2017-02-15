@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'wechat',
+    'saltstack',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -51,7 +51,7 @@ MIDDLEWARE_CLASSES = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'weixin.urls'
+ROOT_URLCONF = 'salt.urls'
 
 TEMPLATES = [
     {
@@ -70,7 +70,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'weixin.wsgi.application'
+WSGI_APPLICATION = 'salt.wsgi.application'
 
 
 # Database

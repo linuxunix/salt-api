@@ -4,7 +4,7 @@ import urllib2,urllib
 import json
 #初始化坏境
 import os
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "weixin.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "salt.settings")
 import django
 django.setup()
 

@@ -2,7 +2,7 @@
 from django.conf import settings
 #初始化坏境
 import os
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "weixin.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "salt.settings")
 import django
 django.setup()
 import MySQLdb
