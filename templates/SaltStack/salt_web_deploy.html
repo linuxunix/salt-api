@@ -14,7 +14,12 @@
 
 <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
 {% endblock %}
-
+{% block sidebar %}
+<ul class="nav nav-sidebar">
+<li ><a href="/"><a href="/">Overview <span class="sr-only">(current)</span></a></li>
+<li class="active"><a href="{% url 'salt-api' %}">SaltStack</a></li>
+</ul>
+{% endblock %}
 {% block content-panel %}
 <h1 class="page-header">SaltStack</h1>
 
@@ -26,82 +31,35 @@
           <li role="presentation"><a href="{% url 'salt_many_cmd'%}">批量执行命令</a></li>
            <li role="presentation"><a href="{% url 'salt_deploy' %}">自动化部署应用</a></li>
           <li role="presentation" class="active"><a href="{% url 'salt_web_deploy' %}">网站发布</a></li>
+           <li role="presentation"><a href="{% url 'salt_project_new' %}">新增发布项目</a></li>
         </ul>
     </div>
-
-
 <div class="container-fluid">
     <div class="row">
           <div class="alert alert-info" role="alert" align="center" id="success_info" style="display:none"></div>
-                  <div class="col-md-3">
-                       <form enctype="multipart/form-data" action="" method="POST">{% csrf_token %}
-                             <div class="panel panel-default panel-right">
-                                    <label for="id_type">请选择主机/主机组：</label>
-                                     <select  id="task_type" class="selectpicker">
-                                            <option value="file_send">主机</option>
-                                            <option value="file_get">主机组</option>
-                                            </select>
-                                    <select id="match" class="form-control" multiple="" name="match" style="background-color: black;color: green">
-                                        {% for i in Accepted_Keys %}
-                                            <option>{{ i }}</option>
-                                        {% empty %}
-                                            <option>还没有认证的主机</option>
-                                        {% endfor %}
-                                    </select>
-                                      <hr>
-                                      <input id="file_upload" name="filename" type="file" multiple class="file-loading">
-                                      <div class="form-group">
-                                        <label for="exampleInputName2">远程文件路径</label>
-                                        <input type="text" placeholder="必须输入绝对路径，不要包含文件名" class="form-control" name="remote_file_path" id="remote_file_path" >
-                                      </div>
-                                      <button type="button" class="btn btn-success pull-right" onclick="SubmitTask('multi_file_transfer')">执行任务</button>
-                             </div>
-                         </form>
-                        <label><input class="btn btn-primary btn-xs" type="button" value="执行部署" onclick="getDate()"></label>
-                 </div>
-                 <!--<div class="col-md-1"></div>-->
-
+            <div class="page-header">
+              <h3>项目列表</h3>
+            </div>
+         <div class="col-xs-6 col-md-2">
+            <div class="btn-group btn-group-justified" role="group" aria-label="...">
+                <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default">Left</button>
+                </div>
+            </div>
           </div>
+         <div class="col-xs-6 col-md-2">
+             <div class="btn-group btn-group-justified" role="group" aria-label="...">
+                <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default">Left</button>
+                </div>
+            </div>
+         </div>
 </div>
 
 {% endblock %}
 
 {% block js %}
-   <script type="text/javascript">
-         $(document).ready(function(){
 
-                upload_files = [];
-
-                $("#file_upload").fileinput({
-                    uploadUrl: "#", // 上传路径
-                    uploadAsync: true,
-                    language:'zh',
-                    maxFileSize:2000,
-                    maxFileCount: 5,
-
-                });
-                $('#file_upload').on('fileuploaded', function(event, data, previewId, index) {
-                    var form = data.form, files = data.files, extra = data.extra,
-                        response = data.response, reader = data.reader;
-
-                        console.log(response);
-                        upload_files.push(response.uploaded_file_path);
-                });
-
-                $("#task_type").on("change",function(){
-                    if (this.value == 'file_send'){
-                        $(".file-input").removeClass("hide");
-                        $("#file-download-to-local").addClass("hide")
-                    }else{
-                        $(".file-input").addClass("hide");
-                        $("#file-download-to-local").removeClass("hide")
-                    }
-
-                });//end on change
-
-
-         });
-        </script>
 <script>
 $(document).ready(function() {
      $('#Unaccepted_Key_Submit').click(function (){

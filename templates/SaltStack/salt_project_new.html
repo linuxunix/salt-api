@@ -1,0 +1,185 @@
+{% extends 'base.html' %}
+
+
+{% block css %}
+{% load staticfiles %}
+        <script src="/static/bootstrap-fileinput/js/fileinput.js"></script>
+        <script src="/static/bootstrap-fileinput/js/fileinput_locale_zh.js"></script>
+        <script src="/static/bootstrap-fileinput/js/plugins/canvas-to-blob.js"></script>
+        <link href="/static/bootstrap-fileinput/css/fileinput.min.css" rel="stylesheet">
+        <script src="/static/bootstrap-fileinput/js/fileinput.js"></script>
+        <script src="/static/bootstrap-fileinput/js/fileinput_locale_zh.js"></script>
+        <script src="/static/bootstrap-fileinput/js/plugins/canvas-to-blob.js"></script>
+        <link href="/static/bootstrap-fileinput/css/fileinput.min.css" rel="stylesheet">
+
+<script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+{% endblock %}
+{% block sidebar %}
+<ul class="nav nav-sidebar">
+<li ><a href="/"><a href="/">Overview <span class="sr-only">(current)</span></a></li>
+<li class="active"><a href="{% url 'salt-api' %}">SaltStack</a></li>
+</ul>
+{% endblock %}
+{% block content-panel %}
+<h1 class="page-header">SaltStack</h1>
+
+<div class="row placeholders">
+
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" ><a href="{% url 'salt-api' %}">minion 认证管理</a></li>
+          <li role="presentation"><a href="#">管理minion服务</a></li>
+          <li role="presentation"><a href="{% url 'salt_many_cmd'%}">批量执行命令</a></li>
+           <li role="presentation"><a href="{% url 'salt_deploy' %}">自动化部署应用</a></li>
+          <li role="presentation"><a href="{% url 'salt_web_deploy' %}">网站发布</a></li>
+           <li role="presentation" class="active"><a href="#">新增发布项目</a></li>
+        </ul>
+    </div>
+<div class="container-fluid">
+    <div class="row">
+           <div class="col-md-7">
+                <form class="form-horizontal" method="post" action="" enctype="multipart/form-data"> {% csrf_token %}
+                      <div class="form-group">
+                            <label for="project_name" class="col-sm-2 control-label">项目名字</label>
+                            <div class="col-sm-8">
+                              <input type="text" class="form-control" name="project_name" placeholder="project_name">
+                            </div>
+                       </div>
+                        <div class="form-group">
+                            <label for="project_env" class="col-sm-2 control-label">项目坏境</label>
+                            <div class="col-sm-10">
+                                  <select  id="project_env" name="project_env">
+                                    <option value="dev_env" name="dev_env" >灰度发布</option>
+                                    <option value="pro_env" name="pro_env">正式坏境</option>
+                                  </select>
+                            </div>
+                      </div>
+                      <div class="form-group">
+                            <label for="project_addr" class="col-sm-2 control-label">项目地址</label>
+                            <div class="col-sm-8">
+                              <input type="text" class="form-control" name="project_addr" placeholder="项目检测地址">
+                            </div>
+                       </div>
+                        <div class="form-group">
+                            <label for="code_env" class="col-sm-2 control-label">代码坏境</label>
+                            <div class="col-sm-10">
+                                  <select  id="code_env" name="code_env">
+                                    <option value="git" name="git" >git</option>
+                                    <option value="svn" name="svn">svn</option>
+                                  </select>
+                            </div>
+                      </div>
+                       <div class="form-group">
+                            <label for="project_language" class="col-sm-2 control-label">项目语言</label>
+                            <div class="col-sm-10">
+                                  <select  id="project_language" name="project_language">
+                                    <option value="php" name="php" >php</option>
+                                    <option value="java" name="java">java</option>
+                                  </select>
+                            </div>
+                      </div>
+                      <div class="form-group">
+                            <label for="deploy_dir" class="col-sm-2 control-label">发布主机存放代码目录</label>
+                            <div class="col-sm-8">
+                              <input type="text" class="form-control" name="deploy_dir" placeholder="发布主机存放代码目录">
+                            </div>
+                       </div>
+                      <div class="form-group">
+                            <label for="target_webroot" class="col-sm-2 control-label">目标主机Webroot</label>
+                            <div class="col-sm-8">
+                              <input type="text" class="form-control" name="target_webroot" placeholder="目标主机Webroot家目录">
+                            </div>
+                       </div>
+                      <div class="form-group">
+                            <label for="target_releases" class="col-sm-2 control-label">目标主机版本库</label>
+                            <div class="col-sm-8">
+                              <input type="text" class="form-control" name="target_releases" placeholder="目标主机版本库目录">
+                            </div>
+                       </div>
+                      <div class="form-group">
+                            <label for="target_server" class="col-sm-2 control-label">目标主机地址</label>
+                            <div class="col-sm-8">
+                              <input type="text" class="form-control" name="target_server" placeholder="目标主机地址（多个用，分开）">
+                            </div>
+                       </div>
+                      <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                          <button type="submit" class="btn btn-default">创建</button>
+                        </div>
+                      </div>
+                </form>
+           </div>
+</div>
+
+{% endblock %}
+
+{% block js %}
+
+<script>
+$(document).ready(function() {
+     $('#Unaccepted_Key_Submit').click(function (){
+         var Unaccepted_Key=$('#Unaccepted_Key').val();
+        $.ajax({
+            url:"{% url 'accepted_key' %}",
+            type: "POST",
+            dataType: "json",
+            data: { Unaccepted_Key: Unaccepted_Key },
+            success:function (d) {
+                $('#success_info').show();
+                $('#success_info').html(d);
+                function reload(){
+                     window.location.reload();
+                    }
+//                    延迟3秒执行reload刷新函数
+                setTimeout(reload, 3000);
+                 },
+            error:function (e) {
+                $('#error_info').html(e.responseText);
+            }
+    });
+    });
+
+     $('#Accepted_Key_Submit').click(function (){
+         var Accepted_Key=$('#Accepted_Key').val();
+        $.ajax({
+            url:"{% url 'delete_key' %}",
+            type: "POST",
+            dataType: "json",
+            data: { Accepted_Key: Accepted_Key },
+            success:function (d) {
+                $('#success_info').show();
+                $('#success_info').html(d);
+                function reload(){
+                     window.location.reload();
+                    }
+//                    延迟3秒执行reload刷新函数
+                setTimeout(reload, 3000);
+                 },
+            error:function (e) {
+                $('#error_info').html(e.responseText);
+            }
+    });
+    });
+
+     $('#Select_Host_Submit').click(function (){
+         var Select_Host=$('#Select_Host').val();
+//         alert(Select_Host);
+        $.ajax({
+            url:"{% url 'salt_test' %}",
+            type: "POST",
+            dataType: "json",
+            data: { Select_Host: Select_Host },
+            success:function (d) {
+                $('#test_info').val(d);
+             },
+            error:function (e) {
+                $('#error_info').html(e.responseText);
+            }
+    });
+    });
+
+
+ });
+
+</script>
+
+{% endblock %}

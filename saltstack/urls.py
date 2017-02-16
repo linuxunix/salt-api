@@ -12,4 +12,5 @@ urlpatterns = [
          url(r'^salt_cmd_result/$', views.salt_cmd_result, name='salt_cmd_result'),
          url(r'^salt_deploy/$', views.salt_deploy, name='salt_deploy'),
          url(r'^salt_web_deploy/$', views.salt_web_deploy, name='salt_web_deploy'),
+         url(r'^salt_project_new/$', views.salt_project_new, name='salt_project_new'),
     ]

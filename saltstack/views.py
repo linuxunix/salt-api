@@ -4,6 +4,7 @@ from saltapi import SaltAPI
 from mysqlapi import MysqlApi
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
+from saltstack import utils
 import os
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "salt.settings")
 try:
@@ -99,9 +100,13 @@ def salt_web_deploy(request):
     return render(request, 'SaltStack/salt_web_deploy.html', locals())
 
 
-
-
-
+def salt_project_new(request):
+    if request.method == 'GET':
+        return render(request, 'SaltStack/salt_project_new.html', locals())
+    elif request.method == 'POST':
+        salt_project_new = utils.Project_deploy_create(request)
+        salt_project_new.create()
+        return HttpResponse("create sussess!")
 
 
 
