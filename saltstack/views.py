@@ -102,15 +102,15 @@ def salt_project_new(request):
     if request.method == 'GET':
         return render(request, 'SaltStack/salt_project_new.html', locals())
     elif request.method == 'POST':
-        try:
-            if models.Project_deploy_create.objects.all().get(project_name=request.POST.get('project_name')):
-                error = '项目名字已经创建，请选择其它名字'
-                return render(request, 'SaltStack/salt_project_new.html', {'error': error})
-        except:
-            pass
-        if request.POST.get('project_addr') == '':
-            error = '项目地址不能为空'
+        if request.POST.get('project_name') == '':
+            error = '项目名字不能为空'
             return render(request, 'SaltStack/salt_project_new.html', {'error': error})
+            try:
+                if models.Project_deploy_create.objects.all().get(project_name=request.POST.get('project_name')):
+                    error = '项目名字已经创建，请选择其它名字'
+                    return render(request, 'SaltStack/salt_project_new.html', {'error': error})
+            except:
+                pass
         if request.POST.get('project_addr') == '':
             error = '项目地址不能为空'
             return render(request, 'SaltStack/salt_project_new.html', {'error': error})
@@ -143,8 +143,27 @@ def project_web_deploy_edit(request,id=None):
     if request.method == 'GET':
         project = get_object_or_404(models.Project_deploy_create, pk=request.GET.get('id'))
         return render(request, 'SaltStack/project_web_deploy_edit.html', locals())
-
-
+    elif request.method == 'POST':
+        if request.POST.get('project_name') == '':
+            error = '项目名字不能为空'
+            return render(request, 'SaltStack/project_web_deploy_edit.html', {'error': error})
+        if request.POST.get('project_addr') == '':
+            error = '项目地址不能为空'
+            return render(request, 'SaltStack/project_web_deploy_edit.html', {'error': error})
+        if request.POST.get('deploy_dir') == '':
+            error = '发布主机存放代码目录不能为空'
+            return render(request, 'SaltStack/project_web_deploy_edit.html', {'error': error})
+        if request.POST.get('target_webroot') == '':
+            error = '目标主机Webroot不能为空'
+            return render(request, 'SaltStack/project_web_deploy_edit.htmll', {'error': error})
+        if request.POST.get('target_releases') == '':
+            error = '目标主机版本库不能为空'
+            return render(request, 'SaltStack/project_web_deploy_edit.html', {'error': error})
+        if request.POST.get('target_server') == '':
+            error = '目标主机地址不能为空'
+            return render(request, 'SaltStack/project_web_deploy_edit.html', {'error': error})
+        utils.Project_deploy_create(request).edit()
+        return HttpResponse('''修改成功, <a href="/saltstack/salt_web_deploy/"> 返回列表</a>''')
 
 
 

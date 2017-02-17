@@ -21,5 +21,8 @@ class Project_deploy_create(object):
         self.data = self.parse_data()
         project_obj = models.Project_deploy_create(**self.data)
         project_obj.save()
-        print project_obj
-        return project_obj
+    def edit(self):
+        self.data = self.parse_data()
+        models.Project_deploy_create.objects.get(project_name=self.request.POST.get('project_name')).delete()
+        project_obj = models.Project_deploy_create(**self.data)
+        project_obj.save()
