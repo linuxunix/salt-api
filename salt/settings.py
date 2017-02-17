@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'salt.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'web_deploy',
+        'NAME': 'web_deploy2',
         'USER':'root',
         'HOST':'192.168.1.234',
         'PASSWORD':'abc123',

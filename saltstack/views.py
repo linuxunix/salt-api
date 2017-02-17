@@ -5,6 +5,8 @@ from mysqlapi import MysqlApi
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from saltstack import utils
+from saltstack import models
+from django.shortcuts import get_object_or_404
 import os
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "salt.settings")
 try:
@@ -44,7 +46,7 @@ def salt_test(request):
 
     else:
         result.append(SaltAPI().salt_remote_execution(tgt=str(node_name[0]),fun='test.ping'))
-        return HttpResponse(json.dumps(str(result[0][0])),content_type='application/json')
+        return HttpResponse(json.dumps(str(result[0])),content_type='application/json')
 
 
 @csrf_exempt
@@ -95,22 +97,52 @@ def test2(request):
     pass
 
 
-def salt_web_deploy(request):
-    Accepted_Keys = SaltAPI().list_all_key()[0]
-    return render(request, 'SaltStack/salt_web_deploy.html', locals())
-
-
 def salt_project_new(request):
+    error = ''
     if request.method == 'GET':
         return render(request, 'SaltStack/salt_project_new.html', locals())
     elif request.method == 'POST':
+        try:
+            if models.Project_deploy_create.objects.all().get(project_name=request.POST.get('project_name')):
+                error = '项目名字已经创建，请选择其它名字'
+                return render(request, 'SaltStack/salt_project_new.html', {'error': error})
+        except:
+            pass
+        if request.POST.get('project_addr') == '':
+            error = '项目地址不能为空'
+            return render(request, 'SaltStack/salt_project_new.html', {'error': error})
+        if request.POST.get('project_addr') == '':
+            error = '项目地址不能为空'
+            return render(request, 'SaltStack/salt_project_new.html', {'error': error})
+        if request.POST.get('deploy_dir') == '':
+            error = '发布主机存放代码目录不能为空'
+            return render(request, 'SaltStack/salt_project_new.html', {'error': error})
+        if request.POST.get('target_webroot') == '':
+            error = '目标主机Webroot不能为空'
+            return render(request, 'SaltStack/salt_project_new.html', {'error': error})
+        if request.POST.get('target_releases') == '':
+            error = '目标主机版本库不能为空'
+            return render(request, 'SaltStack/salt_project_new.html', {'error': error})
+        if request.POST.get('target_server') == '':
+            error = '目标主机地址不能为空'
+            return render(request, 'SaltStack/salt_project_new.html', {'error': error})
         salt_project_new = utils.Project_deploy_create(request)
         salt_project_new.create()
-        return HttpResponse("create sussess!")
+        return HttpResponse('''创建成功, <a href="/saltstack/salt_web_deploy/"> 返回列表</a>''')
 
+def salt_web_deploy(request):
+    Project_name_list = models.Project_deploy_create.objects.all()
+    return render(request, 'SaltStack/salt_web_deploy.html', locals())
 
+def project_web_deploy(request,id=None):
+    Project_name_list = models.Project_deploy_create.objects.all()
+    project = get_object_or_404(models.Project_deploy_create, pk=request.GET.get('id'))
+    return render(request, 'SaltStack/project_web_deploy.html',locals())
 
-
+def project_web_deploy_edit(request,id=None):
+    if request.method == 'GET':
+        project = get_object_or_404(models.Project_deploy_create, pk=request.GET.get('id'))
+        return render(request, 'SaltStack/project_web_deploy_edit.html', locals())
 
 
 
