@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="cb42861b-cdfe-4180-a4b0-3779b3bbdf26" name="默认的" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/saltstack/utils.py" afterPath="$PROJECT_DIR$/saltstack/utils.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/saltstack/views.py" afterPath="$PROJECT_DIR$/saltstack/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/SaltStack/project_web_deploy_edit.html" afterPath="$PROJECT_DIR$/templates/SaltStack/project_web_deploy_edit.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/SaltStack/salt_project_new.html" afterPath="$PROJECT_DIR$/templates/SaltStack/salt_project_new.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/SaltStack/project_web_deploy.html" afterPath="$PROJECT_DIR$/templates/SaltStack/project_web_deploy.html" />
     </list>
     <ignored path="salt-api.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -89,11 +86,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="salt_web_deploy.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="salt_web_deploy.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/SaltStack/salt_web_deploy.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="433">
-              <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+            <state relative-caret-position="465">
+              <caret line="54" column="14" selection-start-line="54" selection-start-column="14" selection-end-line="54" selection-end-column="14" />
               <folding>
                 <element signature="n#script#0;n#div#1;n#!!top" expanded="false" />
               </folding>
@@ -111,16 +108,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="project_web_deploy.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="project_web_deploy.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/SaltStack/project_web_deploy.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
-              <caret line="75" column="23" selection-start-line="75" selection-start-column="23" selection-end-line="75" selection-end-column="23" />
+            <state relative-caret-position="522">
+              <caret line="196" column="14" selection-start-line="196" selection-start-column="14" selection-end-line="196" selection-end-column="14" />
               <folding>
                 <element signature="n#div#1;n#div#0;n#div#1;n#!!top" expanded="false" />
                 <element signature="n#div#2;n#div#0;n#div#1;n#!!top" expanded="false" />
+                <element signature="n#div#4;n#div#0;n#div#1;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#li#0;n#td#9;n#tbody#0;n#table#0;n#div#4;n#div#0;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#li#1;n#td#9;n#tbody#0;n#table#0;n#div#4;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#div#5;n#div#0;n#div#1;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#li#0;n#td#9;n#tbody#0;n#table#0;n#div#5;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#1;n#td#9;n#tbody#0;n#table#0;n#div#5;n#div#0;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#script#0;n#div#1;n#!!top" expanded="false" />
               </folding>
             </state>
@@ -213,16 +214,16 @@
         <option value="$PROJECT_DIR$/templates/SaltStack/salt-api.html" />
         <option value="$PROJECT_DIR$/salt/settings.py" />
         <option value="$PROJECT_DIR$/saltstack/saltapi.py" />
-        <option value="$PROJECT_DIR$/templates/SaltStack/salt_web_deploy.html" />
         <option value="$PROJECT_DIR$/saltstack/models.py" />
         <option value="$PROJECT_DIR$/saltstack/admin.py" />
         <option value="$PROJECT_DIR$/saltstack/urls.py" />
-        <option value="$PROJECT_DIR$/templates/SaltStack/project_web_deploy.html" />
         <option value="$PROJECT_DIR$/templates/SaltStack/project_web_deploy_edit.html" />
         <option value="$PROJECT_DIR$/templates/SaltStack/salt_project_new.html" />
         <option value="$PROJECT_DIR$/saltstack/views.py" />
         <option value="$PROJECT_DIR$/saltstack/utils.py" />
         <option value="$PROJECT_DIR$/saltstack/tests.py" />
+        <option value="$PROJECT_DIR$/templates/SaltStack/salt_web_deploy.html" />
+        <option value="$PROJECT_DIR$/templates/SaltStack/project_web_deploy.html" />
       </list>
     </option>
   </component>
@@ -943,7 +944,14 @@
       <option name="project" value="LOCAL" />
       <updated>1487317725416</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="update 可以修改发布项目&#10;">
+      <created>1487325251743</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1487325251743</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -989,9 +997,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="185" y="35" width="1539" height="992" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18255578" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18255578" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="版本控制" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32363212" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="调试" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3784764" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
@@ -1035,7 +1043,8 @@
     <MESSAGE value="update salt-api，前端、mysqlapi&#10;" />
     <MESSAGE value="update salt_deploy&#10;" />
     <MESSAGE value="update salt_web_deploy&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="update salt_web_deploy&#10;" />
+    <MESSAGE value="update 可以修改发布项目&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="update 可以修改发布项目&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1325,20 +1334,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/SaltStack/project_web_deploy.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="75" column="23" selection-start-line="75" selection-start-column="23" selection-end-line="75" selection-end-column="23" />
-          <folding>
-            <element signature="n#div#1;n#div#0;n#div#1;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#div#0;n#div#1;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#li#0;n#td#9;n#tbody#0;n#table#0;n#div#4;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#1;n#td#9;n#tbody#0;n#table#0;n#div#4;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#script#0;n#div#1;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/saltstack/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="546">
@@ -1411,9 +1406,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/SaltStack/salt_web_deploy.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+        <state relative-caret-position="465">
+          <caret line="54" column="14" selection-start-line="54" selection-start-column="14" selection-end-line="54" selection-end-column="14" />
           <folding>
+            <element signature="n#script#0;n#div#1;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/SaltStack/project_web_deploy.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="196" column="14" selection-start-line="196" selection-start-column="14" selection-end-line="196" selection-end-column="14" />
+          <folding>
+            <element signature="n#div#1;n#div#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#div#4;n#div#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#li#0;n#td#9;n#tbody#0;n#table#0;n#div#4;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#1;n#td#9;n#tbody#0;n#table#0;n#div#4;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#div#5;n#div#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#li#0;n#td#9;n#tbody#0;n#table#0;n#div#5;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#1;n#td#9;n#tbody#0;n#table#0;n#div#5;n#div#0;n#div#1;n#!!top" expanded="true" />
             <element signature="n#script#0;n#div#1;n#!!top" expanded="false" />
           </folding>
         </state>
