@@ -3,11 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="cb42861b-cdfe-4180-a4b0-3779b3bbdf26" name="默认的" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/salt/settings.py" afterPath="$PROJECT_DIR$/salt/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/saltstack/models.py" afterPath="$PROJECT_DIR$/saltstack/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/saltstack/tests.py" afterPath="$PROJECT_DIR$/saltstack/tests.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/saltstack/views.py" afterPath="$PROJECT_DIR$/saltstack/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/SaltStack/project_web_deploy.html" afterPath="$PROJECT_DIR$/templates/SaltStack/project_web_deploy.html" />
     </list>
     <ignored path="salt-api.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -87,8 +82,8 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/saltstack/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="443">
-              <caret line="32" column="0" selection-start-line="32" selection-start-column="2" selection-end-line="40" selection-end-column="33" />
+            <state relative-caret-position="614">
+              <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -969,7 +964,14 @@
       <option name="project" value="LOCAL" />
       <updated>1487327858055</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="update web deploy&#10;">
+      <created>1487586256072</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1487586256072</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1015,9 +1017,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14605543" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14605543" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="版本控制" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32341528" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="调试" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3784764" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
@@ -1062,7 +1064,8 @@
     <MESSAGE value="update salt_deploy&#10;" />
     <MESSAGE value="update salt_web_deploy&#10;" />
     <MESSAGE value="update 可以修改发布项目&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="update 可以修改发布项目&#10;" />
+    <MESSAGE value="update web deploy&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="update web deploy&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1431,8 +1434,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/saltstack/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="32" column="0" selection-start-line="32" selection-start-column="2" selection-end-line="40" selection-end-column="33" />
+        <state relative-caret-position="614">
+          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
           <folding />
         </state>
       </provider>
