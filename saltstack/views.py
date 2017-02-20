@@ -105,12 +105,12 @@ def salt_project_new(request):
         if request.POST.get('project_name') == '':
             error = '项目名字不能为空'
             return render(request, 'SaltStack/salt_project_new.html', {'error': error})
-            try:
-                if models.Project_deploy_create.objects.all().get(project_name=request.POST.get('project_name')):
-                    error = '项目名字已经创建，请选择其它名字'
-                    return render(request, 'SaltStack/salt_project_new.html', {'error': error})
-            except:
-                pass
+        try:
+            if models.Project_deploy_create.objects.all().get(project_name=request.POST.get('project_name')):
+                error = '项目名字已经创建，请选择其它名字'
+                return render(request, 'SaltStack/salt_project_new.html', {'error': error})
+        except:
+            pass
         if request.POST.get('project_addr') == '':
             error = '项目地址不能为空'
             return render(request, 'SaltStack/salt_project_new.html', {'error': error})
@@ -126,6 +126,15 @@ def salt_project_new(request):
         if request.POST.get('target_server') == '':
             error = '目标主机地址不能为空'
             return render(request, 'SaltStack/salt_project_new.html', {'error': error})
+        if not os.path.isdir(request.POST.get('deploy_dir')+"/code"):
+            os.makedirs(request.POST.get('deploy_dir')+"/code")
+        import pwd
+        os.chown(request.POST.get('deploy_dir')+"/code", pwd.getpwnam('www')[2], pwd.getpwnam('www')[3])
+        cmd ="cd "+request.POST.get('deploy_dir')+"/code"+"&& su www -c "+  ''' "git clone {0}" '''.format(request.POST.get('project_addr'))
+        print cmd
+        os.system(cmd)
+        if not os.path.isdir(request.POST.get('deploy_dir') + "/tmp"):
+            os.makedirs(request.POST.get('deploy_dir')+ "/tmp")
         salt_project_new = utils.Project_deploy_create(request)
         salt_project_new.create()
         return HttpResponse('''创建成功, <a href="/saltstack/salt_web_deploy/"> 返回列表</a>''')

@@ -30,3 +30,12 @@ class Project_deploy_create(models.Model):
     def __unicode__(self):
         return self.project_name
 
+# class Project_deploy_status(models.Model):
+#     deploy_user = models.CharField(max_length=254,verbose_name=u'开发者')
+#     deploy_dir = models.CharField(max_length=254,verbose_name=u'发布主机存放代码目录')
+#     target_webroot =  models.CharField(max_length=254,verbose_name=u'目标主机Webroot家目录')
+#     target_releases = models.CharField(max_length=254,verbose_name=u'目标主机版本库目录')
+#     target_server = models.CharField(max_length=254,verbose_name=u'目标主机地址')
+#     create_date = models.DateTimeField(auto_now_add=True,verbose_name=u'创建时间')
+#     def __unicode__(self):
+#         return self.deploy_user

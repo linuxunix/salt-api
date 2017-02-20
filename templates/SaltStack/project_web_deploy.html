@@ -68,6 +68,7 @@
                             <th class="col-sm-1">目标主机Webroot</th>
                             <th class="col-sm-1">目标主机版本库</th>
                             <th class="col-sm-1">目标主机</th>
+                            <th class="col-sm-1">创建时间</th>
                             <th class="col-sm-1">操作</th>
                         </thead>
                      <tbody>
@@ -80,6 +81,7 @@
                              <td class=col-sm-1">{{ project.target_webroot }}</td>
                              <td class=col-sm-1">{{ project.target_releases }}</td>
                              <td class=col-sm-1">{{ project.target_server }}</td>
+                             <td class=col-sm-1">{{ project.create_date }}</td>
                              <td class=col-sm-1">
                                  <li style="list-style-type:none;" ><a href="{% url 'project_web_deploy_edit'%}?id={{project.id}}">编辑</a></li>
                                  <li style="list-style-type:none;"><a href="#">删除</a></li>
@@ -92,15 +94,14 @@
       <div class="col-md-13">
                         <table class="table table-bordered">
                             <thead>
+                                <th class="col-sm-1">开发者</th>
                                 <th class="col-sm-1">项目名字</th>
-                                <th class="col-sm-1">项目坏境</th>
-                                <th class="col-sm-1">项目地址</th>
-                                <th class="col-sm-1">代码坏境</th>
-                                <th class="col-sm-1">项目语言</th>
-                                <th class="col-sm-1">发布主机存放代码目录</th>
-                                <th class="col-sm-1">目标主机Webroot</th>
-                                <th class="col-sm-1">目标主机版本库</th>
-                                <th class="col-sm-1">目标主机</th>
+                                <th class="col-sm-1">项目备注</th>
+                                <th class="col-sm-1">代码分支</th>
+                                <th class="col-sm-1">版本号</th>
+                                <th class="col-sm-1">开始时间</th>
+                                <th class="col-sm-1">完成时间</th>
+                                <th class="col-sm-1">状态</th>
                                 <th class="col-sm-1">操作</th>
                             </thead>
                          <tbody>
@@ -112,15 +113,43 @@
                                  <td class=col-sm-1">{{ project.deploy_dir }}</td>
                                  <td class=col-sm-1">{{ project.target_webroot }}</td>
                                  <td class=col-sm-1">{{ project.target_releases }}</td>
-                                 <td class=col-sm-1">{{ project.target_server }}</td>
                                  <td class=col-sm-1">
-                                     <li style="list-style-type:none;" ><a href="{% url 'project_web_deploy_edit'%}?id={{project.id}}">编辑</a></li>
-                                     <li style="list-style-type:none;"><a href="#">删除</a></li>
+                                     <li style="list-style-type:none;" ><a href="{% url 'project_web_deploy_edit'%}?id={{project.id}}">发布</a></li>
+                                     <li style="list-style-type:none;"><a href="#">回滚</a></li>
+                                 </td>
+                         </tbody>
+                         </table>
+             </div><hr>
+      <h3> <span class="label label-info">发布历史</span></h3>
+       <div class="col-md-13">
+                        <table class="table table-bordered">
+                            <thead>
+                                <th class="col-sm-1">开发者</th>
+                                <th class="col-sm-1">项目名字</th>
+                                <th class="col-sm-1">项目备注</th>
+                                <th class="col-sm-1">代码分支</th>
+                                <th class="col-sm-1">版本号</th>
+                                <th class="col-sm-1">开始时间</th>
+                                <th class="col-sm-1">完成时间</th>
+                                <th class="col-sm-1">状态</th>
+                                <th class="col-sm-1">操作</th>
+                            </thead>
+                         <tbody>
+                                <td class=col-sm-1">{{ project.project_name }}</td>
+                                <td class=col-sm-1">{{ project.project_env }}</td>
+                                <td class=col-sm-1">{{ project.project_addr }}</td>
+                                <td class=col-sm-1">{{ project.code_env }}</td>
+                                 <td class=col-sm-1">{{ project.project_language }}</td>
+                                 <td class=col-sm-1">{{ project.deploy_dir }}</td>
+                                 <td class=col-sm-1">{{ project.target_webroot }}</td>
+                                 <td class=col-sm-1">{{ project.target_releases }}</td>
+                                 <td class=col-sm-1">
+                                     <li style="list-style-type:none;"><a href="#">查看详细结果</a></li>
+                                     <li style="list-style-type:none;"><a href="#">回滚此版本</a></li>
                                  </td>
                          </tbody>
                          </table>
              </div>
-
 </div>
 
 {% endblock %}
