@@ -14,5 +14,6 @@ urlpatterns = [
          url(r'^salt_web_deploy/$', views.salt_web_deploy, name='salt_web_deploy'),
          url(r'^salt_project_new/$', views.salt_project_new, name='salt_project_new'),
          url(r'^project_web_deploy/$', views.project_web_deploy, name='project_web_deploy'),
+         url(r'^project_web_deploy_result/$', views.project_web_deploy_result, name='project_web_deploy_result'),
          url(r'^project_web_deploy_edit/$', views.project_web_deploy_edit, name='project_web_deploy_edit'),
     ]

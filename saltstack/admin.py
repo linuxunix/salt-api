@@ -4,4 +4,4 @@ from django.contrib import admin
 
 from saltstack import models
 admin.site.register(models.Project_deploy_create)
-
+admin.site.register(models.Project_deploy_status)

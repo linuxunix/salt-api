@@ -7,7 +7,8 @@ from django.views.decorators.csrf import csrf_exempt
 from saltstack import utils
 from saltstack import models
 from django.shortcuts import get_object_or_404
-import os
+import os,subprocess
+import time,datetime
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "salt.settings")
 try:
     import json
@@ -131,7 +132,6 @@ def salt_project_new(request):
         import pwd
         os.chown(request.POST.get('deploy_dir')+"/code", pwd.getpwnam('www')[2], pwd.getpwnam('www')[3])
         cmd ="cd "+request.POST.get('deploy_dir')+"/code"+"&& su www -c "+  ''' "git clone {0}" '''.format(request.POST.get('project_addr'))
-        print cmd
         os.system(cmd)
         if not os.path.isdir(request.POST.get('deploy_dir') + "/tmp"):
             os.makedirs(request.POST.get('deploy_dir')+ "/tmp")
@@ -144,8 +144,35 @@ def salt_web_deploy(request):
     return render(request, 'SaltStack/salt_web_deploy.html', locals())
 
 def project_web_deploy(request,id=None):
+    code_branch=[ ]
     Project_name_list = models.Project_deploy_create.objects.all()
     project = get_object_or_404(models.Project_deploy_create, pk=request.GET.get('id'))
+    ##获取代码分支
+    cmd = "cd " + project.deploy_dir + "/code/" + project.project_name  +"&& su www -c "+  ''' "git branch -r" '''
+    code_branch_res=subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    for i in code_branch_res.communicate()[0].split('\n'):
+        code_branch.append(i)
+    code_branch.pop()
+    ##获取版本号
+    code_version=[ ]
+    cmd = "cd " + project.deploy_dir + "/code/" + project.project_name  +"&& su www -c "+  ''' "git pull > /dev/null && git describe" '''
+    code_version_res=subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    for i in code_version_res.communicate()[0].split('\n'):
+        code_version.append(i)
+    code_version.pop()
+    ###新增最近5次
+    cmd = "cd " + project.deploy_dir + "/code/" + project.project_name  +"&& su www -c "+  ''' "git log -p -5|grep commit|cut -d ' ' -f2" '''
+    code_version_res=subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    for i in code_version_res.communicate()[0].split('\n'):
+        code_version.append(i[0:6])
+    code_version.pop()
+    if request.method == 'POST':
+        if os.path.isfile('/var/run/deploy.lock'):
+            info='已经存在发布任务，请稍后。'
+        else:
+            deploy = utils.Project_deploy_status(request)
+            deploy.deploy()
+    deploy_results = models.Project_deploy_status.objects.all().order_by('-start_time')
     return render(request, 'SaltStack/project_web_deploy.html',locals())
 
 def project_web_deploy_edit(request,id=None):
@@ -175,10 +202,10 @@ def project_web_deploy_edit(request,id=None):
         return HttpResponse('''修改成功, <a href="/saltstack/salt_web_deploy/"> 返回列表</a>''')
 
 
-
-
-
-
+def project_web_deploy_result(request):
+    deploy_result = models.Project_deploy_status.objects.all().order_by('-start_time')
+    # print deploy_result,type(deploy_result)
+    return render(request, 'SaltStack/project_web_deploy.html',locals())
 
 
 

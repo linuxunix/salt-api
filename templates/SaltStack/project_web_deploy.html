@@ -92,6 +92,50 @@
          <hr>
          <br>
       <div class="col-md-13">
+               <form class="form-horizontal" method="post" action="" enctype="multipart/form-data"> {% csrf_token %}
+                        <table class="table table-bordered">
+                            <thead>
+                                <th class="col-sm-1">开发者</th>
+                                <th class="col-sm-1">项目名字</th>
+                                <th class="col-sm-1">项目备注</th>
+                                <th class="col-sm-1">代码分支</th>
+                                <th class="col-sm-1">版本号</th>
+                                <th class="col-sm-1">操作</th>
+                            </thead>
+                         <tbody>
+                                <td class=col-sm-1">{{ request.user }}</td>
+                                <td class=col-sm-1">{{ project.project_name }}</td>
+                                <td class=col-sm-1">
+                                     <input type="text" class="form-control" name="project_commit" >
+                                </td>
+                                <td class=col-sm-1">
+                                    <select  id="code_branch" name="code_branch">
+                                        {% for i in code_branch%}
+                                              <option value="{{ i }}" name="code_branch" >{{ i }}</option>
+                                        {% endfor %}
+                                     </select>
+                                </td>
+                                 <td class=col-sm-1">
+                                     <select  id="code_version" name="code_version">
+                                        {% for i in code_version%}
+                                              <option value="{{ i }}" name="code_version" >{{ i }}</option>
+                                        {% endfor %}
+                                     </select>
+                                 </td>
+                                 <td class=col-sm-1">
+                                     <button type="submit" class="btn btn-info">发布</button>
+                                 </td>
+                         </tbody>
+                         </table>
+                </form>
+             </div><hr>
+      <h3> <span class="label label-info">发布历史</span></h3>
+        {% if info %}
+        <div class="alert alert-danger" role="alert">
+                <p style="text-align: center;">{{ info }}</p>
+        </div>
+        {% endif %}
+      <div class="col-md-13">
                         <table class="table table-bordered">
                             <thead>
                                 <th class="col-sm-1">开发者</th>
@@ -104,123 +148,47 @@
                                 <th class="col-sm-1">状态</th>
                                 <th class="col-sm-1">操作</th>
                             </thead>
-                         <tbody>
-                                <td class=col-sm-1">{{ project.project_name }}</td>
-                                <td class=col-sm-1">{{ project.project_env }}</td>
-                                <td class=col-sm-1">{{ project.project_addr }}</td>
-                                <td class=col-sm-1">{{ project.code_env }}</td>
-                                 <td class=col-sm-1">{{ project.project_language }}</td>
-                                 <td class=col-sm-1">{{ project.deploy_dir }}</td>
-                                 <td class=col-sm-1">{{ project.target_webroot }}</td>
-                                 <td class=col-sm-1">{{ project.target_releases }}</td>
+                         <tbody id="get_deploy_result">
+                                {% for deploy_result in deploy_results %}
+                                 <tr>
+                                <td class=col-sm-1">{{ deploy_result.deploy_user }}</td>
+                                <td class=col-sm-1">{{ deploy_result.project_name }}</td>
+                                <td class=col-sm-1">{{ deploy_result.project_commit }}</td>
+                                 <td class=col-sm-1">{{ deploy_result.code_branch }}</td>
+                                 <td class=col-sm-1">{{ deploy_result.code_version }}</td>
+                                 <td class=col-sm-1">{{ deploy_result.start_time| date:"Y-m-d H:i:s" }}</td>
+                                 <td class=col-sm-1">{{ deploy_result.finish_time }}</td>
+                                 <td class=col-sm-1">{{ deploy_result.status }}</td>
                                  <td class=col-sm-1">
-                                     <li style="list-style-type:none;" ><a href="{% url 'project_web_deploy_edit'%}?id={{project.id}}">发布</a></li>
-                                     <li style="list-style-type:none;"><a href="#">回滚</a></li>
+                                        <li style="list-style-type:none;" ><a href="{% url 'project_web_deploy_edit'%}?id={{project.id}}">查看详细记录</a></li>
+                                        <li style="list-style-type:none;" ><a href="{% url 'project_web_deploy_edit'%}?id={{project.id}}">回滚</a></li>
                                  </td>
+                                 </tr>
+                                {% endfor %}
                          </tbody>
                          </table>
              </div><hr>
-      <h3> <span class="label label-info">发布历史</span></h3>
-       <div class="col-md-13">
-                        <table class="table table-bordered">
-                            <thead>
-                                <th class="col-sm-1">开发者</th>
-                                <th class="col-sm-1">项目名字</th>
-                                <th class="col-sm-1">项目备注</th>
-                                <th class="col-sm-1">代码分支</th>
-                                <th class="col-sm-1">版本号</th>
-                                <th class="col-sm-1">开始时间</th>
-                                <th class="col-sm-1">完成时间</th>
-                                <th class="col-sm-1">状态</th>
-                                <th class="col-sm-1">操作</th>
-                            </thead>
-                         <tbody>
-                                <td class=col-sm-1">{{ project.project_name }}</td>
-                                <td class=col-sm-1">{{ project.project_env }}</td>
-                                <td class=col-sm-1">{{ project.project_addr }}</td>
-                                <td class=col-sm-1">{{ project.code_env }}</td>
-                                 <td class=col-sm-1">{{ project.project_language }}</td>
-                                 <td class=col-sm-1">{{ project.deploy_dir }}</td>
-                                 <td class=col-sm-1">{{ project.target_webroot }}</td>
-                                 <td class=col-sm-1">{{ project.target_releases }}</td>
-                                 <td class=col-sm-1">
-                                     <li style="list-style-type:none;"><a href="#">查看详细结果</a></li>
-                                     <li style="list-style-type:none;"><a href="#">回滚此版本</a></li>
-                                 </td>
-                         </tbody>
-                         </table>
-             </div>
 </div>
 
 {% endblock %}
 {% block js %}
 
 <script>
-$(document).ready(function() {
-     $('#Unaccepted_Key_Submit').click(function (){
-         var Unaccepted_Key=$('#Unaccepted_Key').val();
+$(document).ready(function(){
+getDate();
+});
+ function getDate() {
         $.ajax({
-            url:"{% url 'accepted_key' %}",
-            type: "POST",
+            url: "{% url 'project_web_deploy_result'%}",
+            type: "get",
             dataType: "json",
-            data: { Unaccepted_Key: Unaccepted_Key },
-            success:function (d) {
-                $('#success_info').show();
-                $('#success_info').html(d);
-                function reload(){
-                     window.location.reload();
-                    }
-//                    延迟3秒执行reload刷新函数
-                setTimeout(reload, 3000);
-                 },
+            success: function (d) {
+                mchart(d);
+            },
             error:function (e) {
-                $('#error_info').html(e.responseText);
             }
-    });
-    });
-
-     $('#Accepted_Key_Submit').click(function (){
-         var Accepted_Key=$('#Accepted_Key').val();
-        $.ajax({
-            url:"{% url 'delete_key' %}",
-            type: "POST",
-            dataType: "json",
-            data: { Accepted_Key: Accepted_Key },
-            success:function (d) {
-                $('#success_info').show();
-                $('#success_info').html(d);
-                function reload(){
-                     window.location.reload();
-                    }
-//                    延迟3秒执行reload刷新函数
-                setTimeout(reload, 3000);
-                 },
-            error:function (e) {
-                $('#error_info').html(e.responseText);
-            }
-    });
-    });
-
-     $('#Select_Host_Submit').click(function (){
-         var Select_Host=$('#Select_Host').val();
-//         alert(Select_Host);
-        $.ajax({
-            url:"{% url 'salt_test' %}",
-            type: "POST",
-            dataType: "json",
-            data: { Select_Host: Select_Host },
-            success:function (d) {
-                $('#test_info').val(d);
-             },
-            error:function (e) {
-                $('#error_info').html(e.responseText);
-            }
-    });
-    });
-
-
- });
-
+        });
+    }
 </script>
 
 {% endblock %}
